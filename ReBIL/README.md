@@ -1,4 +1,4 @@
-Pokreće se "ReBIL.exe"
+Pokreće se "ReBIL.exe" unutar mape "Aplikacija"
 
 Podaci za prijavu su:
 
