@@ -1,3 +1,6 @@
+Podaci za prijavu
+Korisničko ime: admin
+Lozinka: admin
 
 # Naziv projekta
 ReBIL - Razminiranje brzo i lako
