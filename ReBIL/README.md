@@ -1,4 +1,5 @@
-Podaci za prijavu
+Pokreće se ReBIL.exe
+Podaci za prijavu su:
 
 Korisničko ime: admin
 
