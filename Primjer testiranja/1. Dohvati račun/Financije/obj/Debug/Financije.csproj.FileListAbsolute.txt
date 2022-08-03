@@ -1,0 +1,11 @@
+C:\Users\Marko\Desktop\zadaci\Rješenje\Financije\Financije\bin\Debug\Financije.dll
+C:\Users\Marko\Desktop\zadaci\Rješenje\Financije\Financije\bin\Debug\Financije.pdb
+C:\Users\Marko\Desktop\zadaci\Rješenje\Financije\Financije\obj\Debug\Financije.csproj.CoreCompileInputs.cache
+C:\Users\Marko\Desktop\zadaci\Rješenje\Financije\Financije\obj\Debug\Financije.dll
+C:\Users\Marko\Desktop\zadaci\Rješenje\Financije\Financije\obj\Debug\Financije.pdb
+C:\Users\Davor\source\repos\Vježba 11\1. Dohvati račun\Financije\bin\Debug\Financije.dll
+C:\Users\Davor\source\repos\Vježba 11\1. Dohvati račun\Financije\bin\Debug\Financije.pdb
+C:\Users\Davor\source\repos\Vježba 11\1. Dohvati račun\Financije\obj\Debug\Financije.csproj.AssemblyReference.cache
+C:\Users\Davor\source\repos\Vježba 11\1. Dohvati račun\Financije\obj\Debug\Financije.csproj.CoreCompileInputs.cache
+C:\Users\Davor\source\repos\Vježba 11\1. Dohvati račun\Financije\obj\Debug\Financije.dll
+C:\Users\Davor\source\repos\Vježba 11\1. Dohvati račun\Financije\obj\Debug\Financije.pdb

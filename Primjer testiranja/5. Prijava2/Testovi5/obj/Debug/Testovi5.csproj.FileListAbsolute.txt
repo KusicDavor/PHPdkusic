@@ -1,0 +1,26 @@
+C:\Users\Davor\source\repos\Vježba 11\Testovi5\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTest.TestAdapter.dll
+C:\Users\Davor\source\repos\Vježba 11\Testovi5\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.Interface.dll
+C:\Users\Davor\source\repos\Vježba 11\Testovi5\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.dll
+C:\Users\Davor\source\repos\Vježba 11\Testovi5\bin\Debug\Microsoft.TestPlatform.AdapterUtilities.dll
+C:\Users\Davor\source\repos\Vježba 11\Testovi5\bin\Debug\Testovi5.dll
+C:\Users\Davor\source\repos\Vježba 11\Testovi5\bin\Debug\Testovi5.pdb
+C:\Users\Davor\source\repos\Vježba 11\Testovi5\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.dll
+C:\Users\Davor\source\repos\Vježba 11\Testovi5\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.dll
+C:\Users\Davor\source\repos\Vježba 11\Testovi5\bin\Debug\Prijava.dll
+C:\Users\Davor\source\repos\Vježba 11\Testovi5\bin\Debug\Prijava.pdb
+C:\Users\Davor\source\repos\Vježba 11\Testovi5\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.xml
+C:\Users\Davor\source\repos\Vježba 11\Testovi5\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.xml
+C:\Users\Davor\source\repos\Vježba 11\Testovi5\obj\Debug\Testovi5.csproj.AssemblyReference.cache
+C:\Users\Davor\source\repos\Vježba 11\Testovi5\obj\Debug\Testovi5.csproj.CoreCompileInputs.cache
+C:\Users\Davor\source\repos\Vježba 11\Testovi5\obj\Debug\Testovi5.csproj.CopyComplete
+C:\Users\Davor\source\repos\Vježba 11\Testovi5\obj\Debug\Testovi5.dll
+C:\Users\Davor\source\repos\Vježba 11\Testovi5\obj\Debug\Testovi5.pdb
+C:\Users\Davor\source\repos\Vježba 11\5. Prijava2\Testovi5\bin\Debug\Testovi5.dll
+C:\Users\Davor\source\repos\Vježba 11\5. Prijava2\Testovi5\bin\Debug\Testovi5.pdb
+C:\Users\Davor\source\repos\Vježba 11\5. Prijava2\Testovi5\bin\Debug\Prijava.dll
+C:\Users\Davor\source\repos\Vježba 11\5. Prijava2\Testovi5\bin\Debug\Prijava.pdb
+C:\Users\Davor\source\repos\Vježba 11\5. Prijava2\Testovi5\obj\Debug\Testovi5.csproj.AssemblyReference.cache
+C:\Users\Davor\source\repos\Vježba 11\5. Prijava2\Testovi5\obj\Debug\Testovi5.csproj.CoreCompileInputs.cache
+C:\Users\Davor\source\repos\Vježba 11\5. Prijava2\Testovi5\obj\Debug\Testovi5.csproj.CopyComplete
+C:\Users\Davor\source\repos\Vježba 11\5. Prijava2\Testovi5\obj\Debug\Testovi5.dll
+C:\Users\Davor\source\repos\Vježba 11\5. Prijava2\Testovi5\obj\Debug\Testovi5.pdb
