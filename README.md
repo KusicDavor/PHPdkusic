@@ -1,6 +1,6 @@
 # Projekti
 
-HTML/CSS projekt je dovoljno otvoriti kroz index.html
+Bubi/Web je HTML/CSS projekt - nakon preuzimanja, dovoljno je otvoriti index.html
 
 Kod PHP projekta, potrebno je koristiti server za otvaranje (rađeno s MySQL i Apache) 
 
