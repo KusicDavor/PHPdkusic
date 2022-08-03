@@ -1,0 +1,275 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{39BF65BC-8BAB-4131-8543-6661E3F4B5DE}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>UpravljanjeResursima</RootNamespace>
+    <AssemblyName>UpravljanjeResursima</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BazaPodataka.cs" />
+    <Compile Include="Dijelovi.cs">
+      <DependentUpon>Entities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DijeloviProjekta.cs">
+      <DependentUpon>Entities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DodavanjeDijelova.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DodavanjeDijelova.Designer.cs">
+      <DependentUpon>DodavanjeDijelova.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DodavanjeProjekta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DodavanjeProjekta.Designer.cs">
+      <DependentUpon>DodavanjeProjekta.cs</DependentUpon>
+    </Compile>
+    <Compile Include="KatalogDijelova.cs">
+      <DependentUpon>Entities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PopisSkladista.cs" />
+    <Compile Include="Skladiste.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Skladiste.Designer.cs">
+      <DependentUpon>Skladiste.cs</DependentUpon>
+    </Compile>
+    <Compile Include="sp_helpdiagramdefinition_Result.cs">
+      <DependentUpon>Entities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sp_helpdiagrams_Result.cs">
+      <DependentUpon>Entities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="UpravljanjeOpremom.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UpravljanjeOpremom.Designer.cs">
+      <DependentUpon>UpravljanjeOpremom.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DodavanjeTransportnihVozila.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DodavanjeTransportnihVozila.Designer.cs">
+      <DependentUpon>DodavanjeTransportnihVozila.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dokumentacija.cs">
+      <DependentUpon>Entities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Eksploziv.cs">
+      <DependentUpon>Entities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Entities.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Entities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Entities.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="IzmjenaInformacijaDijelova.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="IzmjenaInformacijaDijelova.Designer.cs">
+      <DependentUpon>IzmjenaInformacijaDijelova.cs</DependentUpon>
+    </Compile>
+    <Compile Include="IzmjenaInformacijaOpreme.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="IzmjenaInformacijaOpreme.Designer.cs">
+      <DependentUpon>IzmjenaInformacijaOpreme.cs</DependentUpon>
+    </Compile>
+    <Compile Include="IzmjenaInformacijaTransportnihVozila.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="IzmjenaInformacijaTransportnihVozila.Designer.cs">
+      <DependentUpon>IzmjenaInformacijaTransportnihVozila.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Oprema.cs">
+      <DependentUpon>Entities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Prijava.cs">
+      <DependentUpon>Entities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Projekt.cs">
+      <DependentUpon>Entities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Rezervacija.cs">
+      <DependentUpon>Entities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Smjestaj.cs">
+      <DependentUpon>Entities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sysdiagram.cs">
+      <DependentUpon>Entities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TransportnoVozilo.cs" />
+    <Compile Include="FormUpravljanjeResursima.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormUpravljanjeResursima.Designer.cs">
+      <DependentUpon>FormUpravljanjeResursima.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Valuta.cs">
+      <DependentUpon>Entities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Vozilo.cs">
+      <DependentUpon>Entities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ZaposleniciNaProjektu.cs">
+      <DependentUpon>Entities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Zaposlenik.cs">
+      <DependentUpon>Entities.tt</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="DodavanjeDijelova.resx">
+      <DependentUpon>DodavanjeDijelova.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DodavanjeProjekta.resx">
+      <DependentUpon>DodavanjeProjekta.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Skladiste.resx">
+      <DependentUpon>Skladiste.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UpravljanjeOpremom.resx">
+      <DependentUpon>UpravljanjeOpremom.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DodavanjeTransportnihVozila.resx">
+      <DependentUpon>DodavanjeTransportnihVozila.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="IzmjenaInformacijaDijelova.resx">
+      <DependentUpon>IzmjenaInformacijaDijelova.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="IzmjenaInformacijaOpreme.resx">
+      <DependentUpon>IzmjenaInformacijaOpreme.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="IzmjenaInformacijaTransportnihVozila.resx">
+      <DependentUpon>IzmjenaInformacijaTransportnihVozila.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="FormUpravljanjeResursima.resx">
+      <DependentUpon>FormUpravljanjeResursima.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EntityDeploy Include="Entities.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>Entities.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="Entities.edmx.diagram">
+      <DependentUpon>Entities.edmx</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Properties\DataSources\Dijelovi.datasource" />
+    <None Include="Properties\DataSources\Oprema.datasource" />
+    <None Include="Properties\DataSources\Vozilo.datasource" />
+    <None Include="Properties\DataSources\ZaposleniciNaProjektu.datasource" />
+    <None Include="Properties\DataSources\Zaposlenik.datasource" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ReBilLogo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Entities.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Entities.edmx</DependentUpon>
+      <LastGenOutput>Entities.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Entities.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Entities.edmx</DependentUpon>
+      <LastGenOutput>Entities.cs</LastGenOutput>
+    </Content>
+    <None Include="Resources\dodavanje_vozila1.jpg" />
+    <None Include="Resources\dodavanje_opreme1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\NavigacijaDLL\NavigacijaDLL.csproj">
+      <Project>{7c340956-2248-4960-bc88-3e4886daf29f}</Project>
+      <Name>NavigacijaDLL</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

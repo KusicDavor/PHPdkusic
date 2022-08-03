@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="28b3f119ddd244a8993b11cbcb313628" Name="Diagram1" ZoomLevel="95">
+        <EntityTypeShape EntityType="PI2221_DBModel.Dijelovi" Width="1.5" PointX="3" PointY="22.125" />
+        <EntityTypeShape EntityType="PI2221_DBModel.Dokumentacija" Width="1.5" PointX="3" PointY="7" />
+        <EntityTypeShape EntityType="PI2221_DBModel.Eksploziv" Width="1.5" PointX="3" PointY="9.875" />
+        <EntityTypeShape EntityType="PI2221_DBModel.Oprema" Width="1.5" PointX="3" PointY="0.75" />
+        <EntityTypeShape EntityType="PI2221_DBModel.Prijava" Width="1.5" PointX="5.75" PointY="2.125" />
+        <EntityTypeShape EntityType="PI2221_DBModel.Projekt" Width="1.5" PointX="8.875" PointY="8.875" />
+        <EntityTypeShape EntityType="PI2221_DBModel.Rezervacija" Width="1.5" PointX="17" PointY="11.625" />
+        <EntityTypeShape EntityType="PI2221_DBModel.Smjestaj" Width="1.5" PointX="1.5" PointY="15.625" />
+        <EntityTypeShape EntityType="PI2221_DBModel.sysdiagram" Width="1.5" PointX="5.75" PointY="5.125" />
+        <EntityTypeShape EntityType="PI2221_DBModel.Valuta" Width="1.5" PointX="1.5" PointY="19" />
+        <EntityTypeShape EntityType="PI2221_DBModel.Vozilo" Width="1.5" PointX="10" PointY="14.25" />
+        <EntityTypeShape EntityType="PI2221_DBModel.ZaposleniciNaProjektu" Width="1.5" PointX="12.5" PointY="8.5" />
+        <EntityTypeShape EntityType="PI2221_DBModel.Zaposlenik" Width="1.5" PointX="0.75" PointY="8.75" />
+        <AssociationConnector Association="PI2221_DBModel.FK_Dijelovi_Vozilo" />
+        <AssociationConnector Association="PI2221_DBModel.FK_Dokumentacija_Projekt" />
+        <AssociationConnector Association="PI2221_DBModel.FK_Eksploziv_Projekt" />
+        <AssociationConnector Association="PI2221_DBModel.FK_Oprema_Zaposlenik" />
+        <AssociationConnector Association="PI2221_DBModel.FK_ZaposleniciNaProjektu_Projekt" />
+        <AssociationConnector Association="PI2221_DBModel.FK_Rezervacija_Smjestaj" />
+        <AssociationConnector Association="PI2221_DBModel.FK_Smjestaj_Valuta" />
+        <AssociationConnector Association="PI2221_DBModel.FK_ZaposleniciNaProjektu_Zaposlenik" />
+        <AssociationConnector Association="PI2221_DBModel.VozilaProjekta" />
+        <AssociationConnector Association="PI2221_DBModel.ZaposleniciURezervaciji" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

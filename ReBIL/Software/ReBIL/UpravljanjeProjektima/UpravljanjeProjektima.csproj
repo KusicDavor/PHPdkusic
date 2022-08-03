@@ -1,0 +1,346 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{AFB8E821-0BAA-4495-B34B-B854D27150B0}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>UpravljanjeProjektima</RootNamespace>
+    <AssemblyName>UpravljanjeProjektima</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="EvidencijaEksplozivaDLL, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\ReBIL\Resources\EvidencijaEksplozivaDLL.dll</HintPath>
+    </Reference>
+    <Reference Include="NavigacijaDLL, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\ReBIL\Resources\NavigacijaDLL.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DatabaseProjekti.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DatabaseProjekti.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DatabaseProjekti.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DatabaseProjekti.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DatabaseProjekti.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DatabaseProjekti.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Dijelovi.cs">
+      <DependentUpon>DatabaseProjekti.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Dokumentacija.cs">
+      <DependentUpon>DatabaseProjekti.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Eksploziv.cs">
+      <DependentUpon>DatabaseProjekti.tt</DependentUpon>
+    </Compile>
+    <Compile Include="FormDodajEksplozivnoSredstvo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormDodajEksplozivnoSredstvo.Designer.cs">
+      <DependentUpon>FormDodajEksplozivnoSredstvo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormDodajNoviProjekt.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormDodajNoviProjekt.Designer.cs">
+      <DependentUpon>FormDodajNoviProjekt.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormDodajDokumentaciju.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormDodajDokumentaciju.Designer.cs">
+      <DependentUpon>FormDodajDokumentaciju.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormDodajSmjestaj.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormDodajSmjestaj.Designer.cs">
+      <DependentUpon>FormDodajSmjestaj.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormDodajVozilo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormDodajVozilo.Designer.cs">
+      <DependentUpon>FormDodajVozilo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormEvidencijaEksplozivnihSredstava.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormEvidencijaEksplozivnihSredstava.Designer.cs">
+      <DependentUpon>FormEvidencijaEksplozivnihSredstava.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormLogistika.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormLogistika.Designer.cs">
+      <DependentUpon>FormLogistika.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormRezervacijaSmjestaja.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormRezervacijaSmjestaja.Designer.cs">
+      <DependentUpon>FormRezervacijaSmjestaja.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormRezervacije.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormRezervacije.Designer.cs">
+      <DependentUpon>FormRezervacije.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormStatistika.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormStatistika.Designer.cs">
+      <DependentUpon>FormStatistika.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormUpravljanjeProjektima.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormUpravljanjeProjektima.Designer.cs">
+      <DependentUpon>FormUpravljanjeProjektima.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormUpravljanjeDokumentacijom.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormUpravljanjeDokumentacijom.Designer.cs">
+      <DependentUpon>FormUpravljanjeDokumentacijom.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormUrediRezervaciju.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormUrediRezervaciju.Designer.cs">
+      <DependentUpon>FormUrediRezervaciju.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormUrediSmjestaj.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormUrediSmjestaj.Designer.cs">
+      <DependentUpon>FormUrediSmjestaj.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormVozilaProjekta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormVozilaProjekta.Designer.cs">
+      <DependentUpon>FormVozilaProjekta.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ObrisiEksplozivnoSredstvo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ObrisiEksplozivnoSredstvo.Designer.cs">
+      <DependentUpon>ObrisiEksplozivnoSredstvo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Oprema.cs">
+      <DependentUpon>DatabaseProjekti.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Prijava.cs">
+      <DependentUpon>DatabaseProjekti.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Projekt.cs">
+      <DependentUpon>DatabaseProjekti.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="Repozitorij.cs" />
+    <Compile Include="Rezervacija.cs">
+      <DependentUpon>DatabaseProjekti.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Smjestaj.cs">
+      <DependentUpon>DatabaseProjekti.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sp_helpdiagramdefinition_Result.cs">
+      <DependentUpon>DatabaseProjekti.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sp_helpdiagrams_Result.cs">
+      <DependentUpon>DatabaseProjekti.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Statistika.cs" />
+    <Compile Include="sysdiagram.cs">
+      <DependentUpon>DatabaseProjekti.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Valuta.code.cs" />
+    <Compile Include="Valuta.cs">
+      <DependentUpon>DatabaseProjekti.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Vozilo.cs">
+      <DependentUpon>DatabaseProjekti.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ZaposleniciNaProjektu.cs">
+      <DependentUpon>DatabaseProjekti.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Zaposlenik.code.cs" />
+    <Compile Include="Zaposlenik.cs">
+      <DependentUpon>DatabaseProjekti.tt</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="FormDodajEksplozivnoSredstvo.resx">
+      <DependentUpon>FormDodajEksplozivnoSredstvo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormDodajNoviProjekt.resx">
+      <DependentUpon>FormDodajNoviProjekt.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormDodajDokumentaciju.resx">
+      <DependentUpon>FormDodajDokumentaciju.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormDodajSmjestaj.resx">
+      <DependentUpon>FormDodajSmjestaj.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormDodajVozilo.resx">
+      <DependentUpon>FormDodajVozilo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormEvidencijaEksplozivnihSredstava.resx">
+      <DependentUpon>FormEvidencijaEksplozivnihSredstava.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormLogistika.resx">
+      <DependentUpon>FormLogistika.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormRezervacijaSmjestaja.resx">
+      <DependentUpon>FormRezervacijaSmjestaja.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormRezervacije.resx">
+      <DependentUpon>FormRezervacije.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormStatistika.resx">
+      <DependentUpon>FormStatistika.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormUpravljanjeProjektima.resx">
+      <DependentUpon>FormUpravljanjeProjektima.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormUpravljanjeDokumentacijom.resx">
+      <DependentUpon>FormUpravljanjeDokumentacijom.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormUrediRezervaciju.resx">
+      <DependentUpon>FormUrediRezervaciju.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormUrediSmjestaj.resx">
+      <DependentUpon>FormUrediSmjestaj.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormVozilaProjekta.resx">
+      <DependentUpon>FormVozilaProjekta.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ObrisiEksplozivnoSredstvo.resx">
+      <DependentUpon>ObrisiEksplozivnoSredstvo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="App.config" />
+    <EntityDeploy Include="DatabaseProjekti.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>DatabaseProjekti.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="DatabaseProjekti.edmx.diagram">
+      <DependentUpon>DatabaseProjekti.edmx</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="DatabaseProjekti.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>DatabaseProjekti.edmx</DependentUpon>
+      <LastGenOutput>DatabaseProjekti.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="DatabaseProjekti.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>DatabaseProjekti.edmx</DependentUpon>
+      <LastGenOutput>DatabaseProjekti.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.7.2 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

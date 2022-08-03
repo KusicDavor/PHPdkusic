@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="5af125724afc4d9d956ddff86f9930f8" Name="Diagram1">
+        <EntityTypeShape EntityType="ModelEksploziv.Dijelovi" Width="1.5" PointX="3" PointY="8.5" />
+        <EntityTypeShape EntityType="ModelEksploziv.Dokumentacija" Width="1.5" PointX="1.5" PointY="13.25" />
+        <EntityTypeShape EntityType="ModelEksploziv.Eksploziv" Width="1.5" PointX="1.5" PointY="16" />
+        <EntityTypeShape EntityType="ModelEksploziv.Oprema" Width="1.5" PointX="3" PointY="5.625" />
+        <EntityTypeShape EntityType="ModelEksploziv.Prijava" Width="1.5" PointX="5.75" PointY="0.75" />
+        <EntityTypeShape EntityType="ModelEksploziv.Projekt" Width="1.5" PointX="0.75" PointY="9.875" />
+        <EntityTypeShape EntityType="ModelEksploziv.Rezervacija" Width="1.5" PointX="0.75" PointY="22.125" />
+        <EntityTypeShape EntityType="ModelEksploziv.Smjestaj" Width="1.5" PointX="1.5" PointY="26" />
+        <EntityTypeShape EntityType="ModelEksploziv.sysdiagram" Width="1.5" PointX="5.75" PointY="3.75" />
+        <EntityTypeShape EntityType="ModelEksploziv.Valuta" Width="1.5" PointX="1.5" PointY="29.375" />
+        <EntityTypeShape EntityType="ModelEksploziv.Vozilo" Width="1.5" PointX="0.75" PointY="3.875" />
+        <EntityTypeShape EntityType="ModelEksploziv.ZaposleniciNaProjektu" Width="1.5" PointX="3" PointY="2.25" />
+        <EntityTypeShape EntityType="ModelEksploziv.Zaposlenik" Width="1.5" PointX="0.75" PointY="19.25" />
+        <AssociationConnector Association="ModelEksploziv.FK_Dijelovi_Vozilo" />
+        <AssociationConnector Association="ModelEksploziv.FK_Oprema_Vozilo" />
+        <AssociationConnector Association="ModelEksploziv.FK_ZaposleniciNaProjektu_Projekt" />
+        <AssociationConnector Association="ModelEksploziv.FK_Rezervacija_Smjestaj" />
+        <AssociationConnector Association="ModelEksploziv.FK_Smjestaj_Valuta" />
+        <AssociationConnector Association="ModelEksploziv.FK_ZaposleniciNaProjektu_Zaposlenik" />
+        <AssociationConnector Association="ModelEksploziv.DokumentacijaProjekta" />
+        <AssociationConnector Association="ModelEksploziv.EksploziviProjekta" />
+        <AssociationConnector Association="ModelEksploziv.VozilaProjekta" />
+        <AssociationConnector Association="ModelEksploziv.ZaposleniciURezervaciji" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
