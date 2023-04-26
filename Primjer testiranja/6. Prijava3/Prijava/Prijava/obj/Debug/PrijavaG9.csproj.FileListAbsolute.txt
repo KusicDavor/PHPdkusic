@@ -1,6 +1,0 @@
-C:\Users\mijac\Desktop\G9_Start\Prijava\Prijava\bin\Debug\Prijava.dll
-C:\Users\mijac\Desktop\G9_Start\Prijava\Prijava\bin\Debug\Prijava.pdb
-C:\Users\mijac\Desktop\G9_Start\Prijava\Prijava\obj\Debug\PrijavaG9.csprojAssemblyReference.cache
-C:\Users\mijac\Desktop\G9_Start\Prijava\Prijava\obj\Debug\PrijavaG9.csproj.CoreCompileInputs.cache
-C:\Users\mijac\Desktop\G9_Start\Prijava\Prijava\obj\Debug\Prijava.dll
-C:\Users\mijac\Desktop\G9_Start\Prijava\Prijava\obj\Debug\Prijava.pdb

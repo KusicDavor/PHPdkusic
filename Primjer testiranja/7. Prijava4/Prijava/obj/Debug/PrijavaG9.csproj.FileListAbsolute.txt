@@ -1,6 +1,0 @@
-C:\Users\Davor\source\repos\Vježba 11\7. Prijava4\Prijava\bin\Debug\Prijava.dll
-C:\Users\Davor\source\repos\Vježba 11\7. Prijava4\Prijava\bin\Debug\Prijava.pdb
-C:\Users\Davor\source\repos\Vježba 11\7. Prijava4\Prijava\obj\Debug\PrijavaG9.csproj.AssemblyReference.cache
-C:\Users\Davor\source\repos\Vježba 11\7. Prijava4\Prijava\obj\Debug\PrijavaG9.csproj.CoreCompileInputs.cache
-C:\Users\Davor\source\repos\Vježba 11\7. Prijava4\Prijava\obj\Debug\Prijava.dll
-C:\Users\Davor\source\repos\Vježba 11\7. Prijava4\Prijava\obj\Debug\Prijava.pdb
