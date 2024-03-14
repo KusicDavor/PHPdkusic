@@ -1,0 +1,29 @@
+login:
+    path: /api/login
+    controller: App\Controller\AuthController::login
+    methods: ['POST']
+
+register:
+    path: /api/register
+    controller: App\Controller\AuthController::register
+    methods: ['POST', 'GET']
+
+logout:
+    path: /api/logout
+    controller: App\Controller\AuthController::logout
+    methods: ['POST']
+
+get_user:
+    path: /api/user
+    controller: App\Controller\AuthController::retrieveUser
+    methods: ['GET']
+
+exportCSV:
+    path: /api/exportCSV
+    controller: App\Controller\AuthController::exportUsersCsv
+    methods: ['POST']
+
+exportPDF:
+    path: /api/exportPDF
+    controller: App\Controller\AuthController::exportUsersPdf
+    methods: ['GET']

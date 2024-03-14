@@ -1,0 +1,32 @@
+<?php
+
+namespace App\Security;
+
+use Symfony\Component\Cache\Adapter\FilesystemAdapter;
+use Symfony\Component\Cache\CacheItem;
+
+class JwtTokenManager
+{
+    private $cache;
+
+    public function __construct(FilesystemAdapter $cache)
+    {
+        $this->cache = $cache;
+    }
+
+    public function saveTokenToCache(string $token): void
+    {
+        // Store the token in the cache with a unique key
+        $cacheToken = 'jwt_token_' . md5($token);
+        $cacheItem = new CacheItem();
+        $cacheItem->set($cacheToken);
+        // $this->cache->save($cacheItem);
+    }
+
+    public function saveTokenToCache(string $apiKey): void
+    {
+        $cacheItem = $this->cache->getItem("apiKey");
+        $cacheItem->set($apiKey);
+        $this->cache->save($cacheItem);
+    }
+}

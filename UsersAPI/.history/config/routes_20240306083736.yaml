@@ -1,0 +1,24 @@
+login:
+    path: /api/login
+    controller: App\Controller\AuthController::login
+    methods: ['POST']
+
+register:
+    path: /api/register
+    controller: App\Controller\AuthController::registration
+    methods: ['GET']
+
+register:
+    path: /api/register
+    controller: App\Controller\AuthController::register
+    methods: ['POST']
+
+logout:
+    path: /api/logout
+    controller: App\Controller\AuthController::logout
+    methods: ['POST']
+
+get_user:
+    path: /api/user
+    controller: App\Controller\AuthController::retrieveUser
+    methods: ['POST']
