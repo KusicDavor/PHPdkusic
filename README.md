@@ -48,6 +48,7 @@ AerodromiLetovi - Java web aplikacija (Maven), sadrži 5 manjih aplikacija:
   - sadrži Singleton, Stateful, Staless, Message-Driven beanove
   - prikazuje JMS poruke koje šalje treća aplikacija
   - koristi JavaScript i JSP za prikaze
+
   
 PHP web aplikacija - galerija slika sa administracijom i djeljenjem
 
