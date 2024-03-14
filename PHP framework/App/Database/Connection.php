@@ -1,24 +1,32 @@
 <?php
+
 namespace Database;
+
 use PDO;
-class Connection {
+
+class Connection
+{
     private static $instance;
     private $pdo;
 
-    public function __construct() {}
+    public function __construct()
+    {
+    }
 
-    public static function getInstance() {
+    public static function getInstance()
+    {
         if (!self::$instance) {
             self::$instance = new self();
         }
         return self::$instance;
     }
 
-    public function connect() {
+    public function connect()
+    {
         $host = 'localhost';
-        $dbname = 'prvi_zadatak';
-        $username = 'prvi_zadatak';
-        $password = 'zadatak';
+        $dbname = 'phpFramework';
+        $username = 'davor';
+        $password = 'password';
         $dsn = "mysql:host=$host;dbname=$dbname";
         $options = [
             PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION
@@ -27,12 +35,14 @@ class Connection {
         return $this->pdo;
     }
 
-    public function getPdo() {
+    public function getPdo()
+    {
         return $this->pdo;
     }
 
-     // vraća jedan red
-     public function fetchAssoc($query, $params = []) {
+    // vraća jedan red
+    public function fetchAssoc($query, $params = [])
+    {
         $query .= ' LIMIT 1';
         $statement = $this->pdo->prepare($query);
         $statement->execute($params);
@@ -40,12 +50,13 @@ class Connection {
     }
 
     // vraća sve retke
-    public function fetchAssocAll($query, $limit = null) {
+    public function fetchAssocAll($query, $limit = null)
+    {
         $sql = $query;
         if ($limit !== null) {
             $sql .= " LIMIT :limit";
         }
-        
+
         $stmt = Connection::getInstance()->connect()->prepare($sql);
         if ($limit !== null) {
             $stmt->bindValue(':limit', $limit, PDO::PARAM_INT);
@@ -56,8 +67,9 @@ class Connection {
         return $result;
     }
 
-    public function insert($table, $data) {
-        
+    public function insert($table, $data)
+    {
+
         $isBatchInsert = is_array(reset($data));
         if (!$isBatchInsert) {
             $data = [$data];
@@ -80,7 +92,8 @@ class Connection {
         return $statement->rowCount();
     }
 
-    public function update($table, $columnValues, $conditions) {
+    public function update($table, $columnValues, $conditions)
+    {
         $sql = "UPDATE $table SET ";
         $setValues = [];
         foreach ($columnValues as $column => $value) {

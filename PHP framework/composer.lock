@@ -329,5 +329,5 @@
         "ext-pdo_mysql": ">=8.2"
     },
     "platform-dev": [],
-    "plugin-api-version": "2.2.0"
+    "plugin-api-version": "2.6.0"
 }
