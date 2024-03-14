@@ -1,0 +1,464 @@
+{
+	"info": {
+		"_postman_id": "4221571a-3700-4e00-aaa6-ce3f51ad08f3",
+		"name": "dkusic-projekt",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "27082026"
+	},
+	"item": [
+		{
+			"name": "nadzor",
+			"item": [
+				{
+					"name": "NADZOR",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://200.20.0.4:8080/dkusic_aplikacija_2/api/nadzor",
+							"protocol": "http",
+							"host": [
+								"200",
+								"20",
+								"0",
+								"4"
+							],
+							"port": "8080",
+							"path": [
+								"dkusic_aplikacija_2",
+								"api",
+								"nadzor"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "INFO/NE",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://200.20.0.4:8080/dkusic_aplikacija_2/api/nadzor/INFO/NE",
+							"protocol": "http",
+							"host": [
+								"200",
+								"20",
+								"0",
+								"4"
+							],
+							"port": "8080",
+							"path": [
+								"dkusic_aplikacija_2",
+								"api",
+								"nadzor",
+								"INFO",
+								"NE"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "INFO/DA",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://200.20.0.4:8080/dkusic_aplikacija_2/api/nadzor/INFO/DA",
+							"protocol": "http",
+							"host": [
+								"200",
+								"20",
+								"0",
+								"4"
+							],
+							"port": "8080",
+							"path": [
+								"dkusic_aplikacija_2",
+								"api",
+								"nadzor",
+								"INFO",
+								"DA"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "PAUZA",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://200.20.0.4:8080/dkusic_aplikacija_2/api/nadzor/PAUZA",
+							"protocol": "http",
+							"host": [
+								"200",
+								"20",
+								"0",
+								"4"
+							],
+							"port": "8080",
+							"path": [
+								"dkusic_aplikacija_2",
+								"api",
+								"nadzor",
+								"PAUZA"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "INIT",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://200.20.0.4:8080/dkusic_aplikacija_2/api/nadzor/INIT",
+							"protocol": "http",
+							"host": [
+								"200",
+								"20",
+								"0",
+								"4"
+							],
+							"port": "8080",
+							"path": [
+								"dkusic_aplikacija_2",
+								"api",
+								"nadzor",
+								"INIT"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "KRAJ",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://200.20.0.4:8080/dkusic_aplikacija_2/api/nadzor/KRAJ",
+							"protocol": "http",
+							"host": [
+								"200",
+								"20",
+								"0",
+								"4"
+							],
+							"port": "8080",
+							"path": [
+								"dkusic_aplikacija_2",
+								"api",
+								"nadzor",
+								"KRAJ"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"description": "nadzor"
+		},
+		{
+			"name": "aerodromi",
+			"item": [
+				{
+					"name": "a",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://200.20.0.4:8080/dkusic_aplikacija_2/api/aerodromi?traziNaziv=air&traziDrzavu=AU&odBroja=1&broj=20",
+							"protocol": "http",
+							"host": [
+								"200",
+								"20",
+								"0",
+								"4"
+							],
+							"port": "8080",
+							"path": [
+								"dkusic_aplikacija_2",
+								"api",
+								"aerodromi"
+							],
+							"query": [
+								{
+									"key": "traziNaziv",
+									"value": "air"
+								},
+								{
+									"key": "traziDrzavu",
+									"value": "AU"
+								},
+								{
+									"key": "odBroja",
+									"value": "1"
+								},
+								{
+									"key": "broj",
+									"value": "20"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "b",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://200.20.0.4:8080/dkusic_aplikacija_2/api/aerodromi/LOWW",
+							"protocol": "http",
+							"host": [
+								"200",
+								"20",
+								"0",
+								"4"
+							],
+							"port": "8080",
+							"path": [
+								"dkusic_aplikacija_2",
+								"api",
+								"aerodromi",
+								"LOWW"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "c",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://200.20.0.4:8080/dkusic_aplikacija_2/api/aerodromi/EDDM/LDZA",
+							"protocol": "http",
+							"host": [
+								"200",
+								"20",
+								"0",
+								"4"
+							],
+							"port": "8080",
+							"path": [
+								"dkusic_aplikacija_2",
+								"api",
+								"aerodromi",
+								"EDDM",
+								"LDZA"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "d",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://200.20.0.4:8080/dkusic_aplikacija_2/api/aerodromi/LOWW/udaljenosti?odBroja=1&broj=20",
+							"protocol": "http",
+							"host": [
+								"200",
+								"20",
+								"0",
+								"4"
+							],
+							"port": "8080",
+							"path": [
+								"dkusic_aplikacija_2",
+								"api",
+								"aerodromi",
+								"LOWW",
+								"udaljenosti"
+							],
+							"query": [
+								{
+									"key": "odBroja",
+									"value": "1"
+								},
+								{
+									"key": "broj",
+									"value": "20"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "e",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://200.20.0.4:8080/dkusic_aplikacija_2/api/aerodromi/LOWW/izracunaj/EDDF",
+							"protocol": "http",
+							"host": [
+								"200",
+								"20",
+								"0",
+								"4"
+							],
+							"port": "8080",
+							"path": [
+								"dkusic_aplikacija_2",
+								"api",
+								"aerodromi",
+								"LOWW",
+								"izracunaj",
+								"EDDF"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "f",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://200.20.0.4:8080/dkusic_aplikacija_2/api/aerodromi/LOWW/udaljenost1/EDDF",
+							"protocol": "http",
+							"host": [
+								"200",
+								"20",
+								"0",
+								"4"
+							],
+							"port": "8080",
+							"path": [
+								"dkusic_aplikacija_2",
+								"api",
+								"aerodromi",
+								"LOWW",
+								"udaljenost1",
+								"EDDF"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "g",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://200.20.0.4:8080/dkusic_aplikacija_2/api/aerodromi/LOWW/udaljenost2?drzava=HR&km=250",
+							"protocol": "http",
+							"host": [
+								"200",
+								"20",
+								"0",
+								"4"
+							],
+							"port": "8080",
+							"path": [
+								"dkusic_aplikacija_2",
+								"api",
+								"aerodromi",
+								"LOWW",
+								"udaljenost2"
+							],
+							"query": [
+								{
+									"key": "drzava",
+									"value": "HR"
+								},
+								{
+									"key": "km",
+									"value": "250"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"description": "aerodromi"
+		},
+		{
+			"name": "dnevnik",
+			"item": [
+				{
+					"name": "a",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://200.20.0.4:8080/dkusic_aplikacija_2/api/dnevnik?vrsta=JAX-RS&odBroja=1&broj=20",
+							"protocol": "http",
+							"host": [
+								"200",
+								"20",
+								"0",
+								"4"
+							],
+							"port": "8080",
+							"path": [
+								"dkusic_aplikacija_2",
+								"api",
+								"dnevnik"
+							],
+							"query": [
+								{
+									"key": "vrsta",
+									"value": "JAX-RS"
+								},
+								{
+									"key": "odBroja",
+									"value": "1"
+								},
+								{
+									"key": "broj",
+									"value": "20"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "b",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "http://200.20.0.4:8080/dkusic_aplikacija_2/api/dnevnik",
+							"protocol": "http",
+							"host": [
+								"200",
+								"20",
+								"0",
+								"4"
+							],
+							"port": "8080",
+							"path": [
+								"dkusic_aplikacija_2",
+								"api",
+								"dnevnik"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"description": "dnevnik"
+		}
+	]
+}

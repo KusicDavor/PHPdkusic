@@ -1,0 +1,1 @@
+java -jar target/dkusic_aplikacija_1-1.0.0.jar NWTiS_dkusic_1.txt

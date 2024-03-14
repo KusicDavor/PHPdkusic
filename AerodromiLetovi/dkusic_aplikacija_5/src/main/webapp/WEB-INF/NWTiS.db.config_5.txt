@@ -1,0 +1,8 @@
+adresa=172.17.0.1
+port=8000
+preuzimanje.od=01.01.2016
+preuzimanje.do=03.01.2016
+OpenSkyNetwork.korisnik=dkusic@student.foi.hr
+OpenSkyNetwork.lozinka=dkusic
+OpenWeatherMap.apikey=77acb5d48ff5e7e0e071d3e8b2abd218
+LocationIQ.apikey=pk.aa4405a094f841a4779b7d785fec4256

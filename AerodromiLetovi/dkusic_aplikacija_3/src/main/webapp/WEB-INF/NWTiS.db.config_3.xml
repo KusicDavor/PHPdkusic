@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+<comment>NWTiS konfiguracija</comment>
+<entry key="adresa">172.17.0.1</entry>
+<entry key="port">8000</entry>
+<entry key="ciklus.trajanje">180</entry> 
+<entry key="preuzimanje.od">22.12.2022</entry>
+<entry key="preuzimanje.do">13.01.2023</entry>
+<entry key="OpenSkyNetwork.korisnik">dkusic@student.foi.hr</entry>
+<entry key="OpenSkyNetwork.lozinka">dkusic</entry>
+</properties>

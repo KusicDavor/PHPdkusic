@@ -1,0 +1,106 @@
+{
+	"folders": {},
+	"connections": {
+		"hsqldb_server-1888e688bee-2313d200f1efd6e": {
+			"provider": "generic",
+			"driver": "hsqldb_server",
+			"name": "nwtis_bp SA",
+			"save-password": true,
+			"configuration": {
+				"host": "localhost",
+				"port": "9001",
+				"database": "nwtis_bp",
+				"url": "jdbc:hsqldb:hsql://localhost:9001/nwtis_bp",
+				"configurationType": "MANUAL",
+				"type": "dev",
+				"auth-model": "native"
+			},
+			"filters": [
+				{
+					"type": "org.jkiss.dbeaver.model.struct.rdb.DBSSchema",
+					"enabled": true,
+					"include": [
+						"PUBLIC"
+					]
+				}
+			]
+		},
+		"hsqldb_server-188b6cd425b-56c331bea096b6d1": {
+			"provider": "generic",
+			"driver": "hsqldb_server",
+			"name": "nwtis_bp korisnik",
+			"save-password": true,
+			"configuration": {
+				"host": "200.20.0.3",
+				"port": "9001",
+				"database": "nwtis_bp",
+				"url": "jdbc:hsqldb:hsql://200.20.0.3:9001/nwtis_bp",
+				"configurationType": "MANUAL",
+				"type": "dev",
+				"auth-model": "native"
+			},
+			"filters": [
+				{
+					"type": "org.jkiss.dbeaver.model.struct.rdb.DBSSchema",
+					"enabled": true,
+					"include": [
+						"PUBLIC"
+					]
+				}
+			]
+		}
+	},
+	"virtual-models": {
+		"hsqldb_server-1888e688bee-2313d200f1efd6e": {
+			"PUBLIC": {
+				":DNEVNIK": {
+					"constraints": {
+						"VIRTUAL_PK": {
+							"type": "vpk",
+							"useAllColumns": true
+						}
+					}
+				},
+				"PUBLIC": {
+					":DNEVNIK": {
+						"constraints": {
+							"VIRTUAL_PK": {
+								"type": "vpk",
+								"useAllColumns": true
+							}
+						}
+					},
+					":AERODROMI_LETOVI": {
+						"constraints": {
+							"VIRTUAL_PK": {
+								"type": "vpk",
+								"useAllColumns": true
+							}
+						}
+					},
+					":KORISNICI": {
+						"constraints": {
+							"VIRTUAL_PK": {
+								"type": "vpk",
+								"attributes": [
+									"KORIME"
+								]
+							}
+						}
+					}
+				}
+			}
+		}
+	},
+	"connection-types": {
+		"dev": {
+			"name": "Development",
+			"color": "255,255,255",
+			"description": "Regular development database",
+			"auto-commit": true,
+			"confirm-execute": false,
+			"confirm-data-change": false,
+			"auto-close-transactions": false
+		}
+	}
+}

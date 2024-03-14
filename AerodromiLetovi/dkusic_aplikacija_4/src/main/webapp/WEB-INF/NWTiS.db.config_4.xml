@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+<comment>NWTiS konfiguracija</comment>
+<entry key="adresa">172.17.0.1</entry>
+<entry key="port">8000</entry>
+<entry key="preuzimanje.od">01.01.2016</entry>
+<entry key="preuzimanje.do">03.01.2016</entry>
+<entry key="OpenSkyNetwork.korisnik">dkusic@student.foi.hr</entry>
+<entry key="OpenSkyNetwork.lozinka">dkusic</entry>
+<entry key="OpenWeatherMap.apikey">77acb5d48ff5e7e0e071d3e8b2abd218</entry>
+<entry key="LocationIQ.apikey">pk.aa4405a094f841a4779b7d785fec4256</entry>
+</properties>
