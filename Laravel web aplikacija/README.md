@@ -6,6 +6,8 @@ Pokretanje radi s "php artisan serve" naredbom.
 ## Punjenje baze podataka
 ~~Za napuniti je potrebno posjetiti "localhost:8000/FakerPHP" što će generirati u tablicu jezika engleski, francuski i hrvatski jezik te kreirati jela sa "title" i "description" na sva tri jezika, te tagove, kategorije i ingrediente također sa "title" na sva tri jezika i nasumično će upariti jela sa kategorijama, tagovima i ingredientima. Ako se želi generirati još, potrebno je samo ponovno posjetiti stranicu~~
 
+Implementirano seedanje baze (php artisan db:seed)
+
 ## Glavna putanja
 ~~"/meals" je glavna putanja na koju se mogu dodavati parametri~~
 
