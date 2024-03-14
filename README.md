@@ -1,15 +1,15 @@
 # Projekti
 Detaljnije o projektima Laravel, ReBIL, Vacations piše u njihovim Readme
 
+Vacations - web aplikacija izrađena u Symfonyu za upravljanje godišnjim odmorima u poduzeću i administraciju
+![image](https://github.com/KusicDavor/Projekti/assets/81571301/702e4f67-09d1-429c-b4b6-2a89c83253d8)
+![image](https://github.com/KusicDavor/Projekti/assets/81571301/caaee2cf-274c-46c3-9bd7-de8e7ccd5e80)
+
+
 Laravel web aplikacija - višejezična API aplikacija izrađena u Laravelu, omogućava korisniku pretragu  i filtriranje jela na temelju parametara poput oznaka, sastojaka, jezika, kategorije, soft deletanja
 
 ![image](https://github.com/KusicDavor/Projekti/assets/81571301/47c334a8-2489-470e-9656-eb504ab14ea4)
 ![image](https://github.com/KusicDavor/Projekti/assets/81571301/8a372de2-52a9-48d2-864a-dc59901b9042)
-
-
-Vacations - web aplikacija izrađena u Symfonyu za upravljanje godišnjim odmorima u poduzeću i administraciju
-![image](https://github.com/KusicDavor/Projekti/assets/81571301/702e4f67-09d1-429c-b4b6-2a89c83253d8)
-![image](https://github.com/KusicDavor/Projekti/assets/81571301/caaee2cf-274c-46c3-9bd7-de8e7ccd5e80)
 
 
 ReBIL je aplikacija izrađena u C# (koristeći VS2022 i MS SQL Server) kao projekt za kolegij za organizaciju i upravljanje u poduzeću
