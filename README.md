@@ -18,4 +18,6 @@ Laravel projekt (PHP + MySQL) je višejezična web aplikacija s naglaskom na API
 
 
 PHP web aplikacija - galerija slika sa administracijom i djeljenjem
+![image](https://github.com/KusicDavor/Projekti/assets/81571301/ccbd3892-2003-459e-99dd-aa90fcb0267d)
+
 Apex Oracle projekt je opisan u dokumentaciji, dok je backup aplikacije pohranjen na cloudu.
