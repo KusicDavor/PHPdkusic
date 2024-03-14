@@ -1,0 +1,30 @@
+{% extends 'team/base.html.twig' %}
+
+{% block title %}Edit Team
+{% endblock %}
+
+{% block body %}
+	<div class="register-form" style="width: 20%; margin-left: 30px">
+		<h1 style="margin-left: 10px">Edit team</h1>
+		{{ include('team/_form.html.twig', {'button_label': 'Update'}) }}
+		{% block javascripts %}
+			<script>
+				// Check if the form has errors
+{% if form_errors(form)|length > 0 %}
+// Display the pop-up window with the error message
+var popupContainer = document.getElementById('popup-container');
+var popupMessage = document.getElementById('popup-message');
+var errorMessage = "{{ form_errors(form)|join(' ') }}";
+
+// Set the error message content
+popupMessage.textContent = errorMessage;
+
+// Show the pop-up container
+popupContainer.style.display = 'block';{% endif %}
+			</script>
+		{% endblock %}
+		<div style="position: absolute; margin-left: 203px; top: 368px">
+			{{ include('team/_delete_form.html.twig') }}
+		</div>
+	</div>
+{% endblock %}

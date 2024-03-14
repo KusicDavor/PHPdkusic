@@ -1,0 +1,36 @@
+{# Your Twig template #}
+
+{% block body %}
+	{# Your HTML content #}
+
+	{# Modal dialog for displaying error message #}
+		<div class="modal fade" id="errorModal" tabindex="-1" role="dialog" aria-labelledby="errorModalLabel" aria-hidden="true"> <div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" id="errorModalLabel">Error</h5>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body">
+					<p>{{ form_errors(form)|join(' ') }}</p>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	{# Your button that needs to be moved #}
+	<button id="delBTN" class="btn btn-primary">Submit</button>
+
+	{% block javascripts %}
+		<script>
+			// Check if the form has errors and move the button if necessary
+{% if form_errors(form)|length > 0 %}
+// Add a class to move the button
+$('#myButton').addClass('movedButton');{% endif %}
+		</script>
+	{% endblock %}
+{% endblock %}

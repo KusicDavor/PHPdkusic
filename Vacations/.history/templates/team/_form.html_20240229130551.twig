@@ -1,0 +1,30 @@
+{{ form_start(form) }}
+<div style="margin-left: 10px">
+	{{ form_widget(form) }}
+</div>
+<button style="margin-left: 10px; font-size: 14px" class="btn">{{ button_label|default('Save') }}</button>
+<a style="margin-top: 10px; margin-left: 10px; font-size: 12px" class="btn btn-primary" href=" {{ path('app_team_index') }} ">Back to list</a>
+{{ form_end(form) }}
+
+
+{% block body %}
+	<div class="popup-container" id="popup-container">
+		<p id="popup-message"></p>
+	</div>
+	{% block javascripts %}
+		<script>
+			// Check if the form has errors
+{% if form_errors(form)|length > 0 %}
+// Display the pop-up window with the error message
+var popupContainer = document.getElementById('popup-container');
+var popupMessage = document.getElementById('popup-message');
+var errorMessage = "{{ form_errors(form)|join(' ') }}";
+
+// Set the error message content
+popupMessage.textContent = errorMessage;
+
+// Show the pop-up container
+popupContainer.style.display = 'block';{% endif %}
+		</script>
+	{% endblock %}
+{% endblock %}

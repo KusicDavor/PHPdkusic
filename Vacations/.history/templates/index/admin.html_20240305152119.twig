@@ -1,0 +1,12 @@
+{# index.html.twig #}
+
+{% block content %}
+    {# Read $stats from cache #}
+    {% set cachedStats = cache.fetch('stats') %}
+
+    {# Display cachedStats in Twig #}
+    <h1>Stats</h1>
+    <p>Total approved requests: {{ cachedStats.approved }}</p>
+    <p>Total declined requests: {{ cachedStats.declined }}</p>
+    <p>Total requests: {{ cachedStats.total }}</p>
+{% endblock %}

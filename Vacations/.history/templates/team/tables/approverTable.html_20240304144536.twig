@@ -1,0 +1,76 @@
+<h1>My team</h1>
+{% for team in teams %}
+	{% if is_granted('ROLE_TEAM_LEADER') and team.teamLeader == app.user %}
+		<table class="table table-bordered table-hover table-striped" style="width: 66.4%">
+			<thead class="thead-dark">
+				<h1>{{ team.teamName }}</h1>
+				{% if team.users is not empty %}
+					<tr>
+						<td style="width: 25%">Member</td>
+						<td style="width: 25%">Job</td>
+						<td style="width: 25%">Role</td>
+						<td>Days of vacation available</td>
+					</tr>
+				{% endif %}
+			</thead>
+			<tbody>
+				{% for user in team.users %}
+					<tr>
+						<td>{{ user.name }}</td>
+						<td>{{ user.job }}</td>
+						<td>{{ user.role.roleName }}</td>
+						<td>{{ user.vacationDays }}</td>
+					</tr>
+				{% endfor %}
+			</tbody>
+		</table>
+	{% elseif is_granted('ROLE_PROJECT_LEADER') and team.projectLeader == app.user %}
+		<table class="table table-bordered table-hover table-striped" style="width: 66.4%">
+			<thead class="thead-dark">
+				{% if team.users is not empty %}
+					<tr>
+						<td style="width: 25%">Member</td>
+						<td style="width: 25%">Job</td>
+						<td style="width: 25%">Role</td>
+						<td>Days of vacation available</td>
+					</tr>
+				{% endif %}
+			</thead>
+			<tbody>
+				{% for user in team.users %}
+					<tr>
+						<td>{{ user.name }}</td>
+						<td>{{ user.job }}</td>
+						<td>{{ user.role.roleName }}</td>
+						<td>{{ user.vacationDays }}</td>
+					</tr>
+				{% endfor %}
+			</tbody>
+		</table>
+	{% endif %}
+	
+	team.teamLeader == app.user
+	<table class="table table-bordered table-hover table-striped" style="width: 66.4%">
+		<thead class="thead-dark">
+			<h1>{{ team.teamName }}</h1>
+			{% if team.users is not empty %}
+				<tr>
+					<td style="width: 25%">Member</td>
+					<td style="width: 25%">Job</td>
+					<td style="width: 25%">Role</td>
+					<td>Days of vacation available</td>
+				</tr>
+			{% endif %}
+		</thead>
+		<tbody>
+			{% for user in team.users %}
+				<tr>
+					<td>{{ user.name }}</td>
+					<td>{{ user.job }}</td>
+					<td>{{ user.role.roleName }}</td>
+					<td>{{ user.vacationDays }}</td>
+				</tr>
+			{% endfor %}
+		</tbody>
+	</table>
+{% endfor %}

@@ -1,0 +1,14 @@
+{{ form_start(form) }}
+<div style="margin-left: 10px">
+	{{ form_widget(form) }}
+</div>
+<button style="margin-left: 10px; font-size: 14px" class="btn">{{ button_label|default('Save') }}</button>
+<a style="margin-top: 10px; margin-left: 10px; font-size: 12px" class="btn btn-primary" href=" {{ path('app_team_index') }} ">Back to list</a>
+{{ form_end(form) }}
+
+{% block javascripts %}
+	<script>
+		{% if form_errors(form)|length > 0 %}
+alert("{{ form_errors(form) }}");{% endif %}
+	</script>
+{% endblock %}

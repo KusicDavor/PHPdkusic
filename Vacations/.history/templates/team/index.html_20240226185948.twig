@@ -1,0 +1,37 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Team index{% endblock %}
+
+{% block body %}
+    <h1>Team index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>ID tima</th>
+                <th>Ime tima</th>
+                <th>Team leader</th>
+                <th>Project leader</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for team in teams %}
+            <tr>
+                <td>{{ team.id }}</td>
+                <td>{{ team.teamName }}</td>
+                <td>{{ team.teamLeader.name }}</td>
+                <td>{{ team.projectLeader.name }}</td>
+                <td>
+                    <a href="{{ path('app_team_edit', {'id': team.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="3">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_team_new') }}">Create new</a>
+{% endblock %}

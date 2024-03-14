@@ -1,0 +1,23 @@
+{% block javascripts %}
+	{{ parent() }}
+	<script>
+		// Check if the form has any errors
+{% if form.vars.errors|length > 0 %}
+// Set a hidden field value to indicate that the pop-up window should be displayed
+document.getElementById('show-popup').value = 'true';{% endif %}
+
+// Show the pop-up window if the hidden field value indicates so
+if (document.getElementById('show-popup').value === 'true') { // Add code here to display the pop-up window
+alert('Do you wish to set the user as leader of the team?');
+}
+	</script>
+{% endblock %}
+
+{{ form_start(form) }}
+<div style="margin-left: 10px">
+	{{ form_widget(form) }}
+</div>
+<input type="hidden" id="show-popup" name="show_popup" value="false">
+<button style="margin-left: 10px; font-size: 14px" class="btn">{{ button_label|default('Save') }}</button>
+<a style="margin-top: 10px; margin-left: 10px; font-size: 12px" class="btn btn-primary" href=" {{ path('app_team_index') }} ">Back to list</a>
+{{ form_end(form) }}

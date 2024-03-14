@@ -1,0 +1,15 @@
+{% extends 'team/base.html.twig' %}
+
+{% block body %}
+	{% block javascripts %}
+		<script>
+			{% if form_errors(form)|length > 0 %}
+var popupContainer = document.getElementById('popup-container');
+var popupMessage = document.getElementById('popup-message');
+var errorMessage = "{{ form_errors(form)|join(' ') }}";
+
+popupMessage.textContent = errorMessage;
+popupContainer.style.display = 'block';{% endif %}
+		</script>
+	{% endblock %}
+{% endblock %}

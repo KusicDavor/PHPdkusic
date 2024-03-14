@@ -1,0 +1,65 @@
+{% extends 'index/base.html.twig' %}
+
+{% block body %}
+	<nav>
+		<ul>
+			<li>
+				<a href="/index">Home</a>
+			</li>
+			<li>
+				<a href="">Administration</a>
+				<ul>
+					<li><a href="/users">Users</a></li>
+					<li><a href="/teams">Teams</a></li>
+					<li><a href="/projects">Projects</a></li>
+				</ul>
+			</li>
+			<li>
+				<a href="/databases">Databases</a>
+			</li>
+			<li>
+				<a href="/organization">Organization</a>
+				<ul>
+					<li><a href="/requests/vacation">Requests</a></li>
+				</ul>
+			</li>
+		</ul>
+		<div class="user-info" style="margin-right: 20px">
+			{% if app.user %}
+				<div class="dropdown">
+					<button class="btn btn-secondary dropdown-toggle" type="button" id="userDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+						Logged:
+						{{ app.user.email }}
+					</button>
+					<a class="dropdown-item" href="{{ path('app_logout') }}">Logout</a>
+				</div>
+			{% else %}
+				<a href="{{ path('app_login') }}">Login</a>
+			{% endif %}
+		</div>
+	</nav>
+
+{% if app.request.attributes.get('app_index') == 'index_page_route_name' %}
+	<table class="table table-bordered table-hover table-striped">
+		<thead>
+			<tr>
+				<th colspan="2">Vacation requests statistics</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>Number of approved requests</td>
+				<td>{{ stats['approved'] }}</td>
+			</tr>
+			<tr>
+				<td>Number of declined requests</td>
+				<td>{{ stats['declined'] }}</td>
+			</tr>
+			<tr>
+				<td>Number of requests currently in process</td>
+				<td>{{ stats['inProcess'] }}</td>
+			</tr>
+		</tbody>
+	</table>
+	{% endcache %}
+{% endblock %}

@@ -1,0 +1,59 @@
+<style>
+	.popup-container {
+		display: none;
+		position: fixed;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		background-color: #f8d7da;
+		border: 1px solid #f5c6cb;
+		padding: 15px;
+		border-radius: 5px;
+		box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+	}
+</style>
+
+{# Your Twig template #}
+
+{% block stylesheets %}
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+{% endblock %}
+
+{% block body %}
+{# Your HTML content #}
+
+{% block javascripts %}
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+{% endblock %}
+
+{# Your Twig template #}
+
+{% block body %}
+{# Your HTML content #}
+
+{# Modal dialog for displaying error message #}
+	<div class="modal fade" id="errorModal" tabindex="-1" role="dialog" aria-labelledby="errorModalLabel" aria-hidden="true"> <div class="modal-dialog" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h5 class="modal-title" id="errorModalLabel">Error</h5>
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+					<span aria-hidden="true">&times;</span>
+				</button>
+			</div>
+			<div class="modal-body">
+				<p>{{ form_errors(form)|join(' ') }}</p>
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+			</div>
+		</div>
+	</div>
+</div>
+
+{% block javascripts %}
+	<script>
+		// Check if the form has errors and show the modal if necessary
+{% if form_errors(form)|length > 0 %}
+$('#errorModal').modal('show');{% endif %}
+	</script>
+{% endblock %}

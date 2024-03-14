@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Home</title>
+	</head>
+	<body>
+		{% if app.user %}
+			{% if 'ROLE_ADMIN' in app.user.roles %}
+				{% include 'index/admin.html.twig' %}
+			{% elseif 'ROLE_TEAM_LEADER' in app.user.roles %}
+				{% include 'index/approver.html.twig' %}
+			{% elseif 'ROLE_PROJECT_LEADER' in app.user.roles %}
+				{% include 'index/approver.html.twig' %}
+			{% elseif 'ROLE_EMPLOYEE' in app.user.roles %}
+				{% include 'index/employee.html.twig' %}
+			{% endif %}
+		{% endif %}
+
+		<table class="table table-bordered table-hover table-striped">
+			<thead>
+				<tr>
+					<th colspan="2">Vacation requests statistics</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>Number of approved requests</td>
+					<td>{{ stats['approved'] }}</td>
+				</tr>
+				<tr>
+					<td>Number of declined requests</td>
+					<td>{{ stats['declined'] }}</td>
+				</tr>
+				<tr>
+					<td>Number of requests currently in process</td>
+					<td>{{ stats['inProcess'] }}</td>
+				</tr>
+			</tbody>
+		</table>
+	</body>
+</html>

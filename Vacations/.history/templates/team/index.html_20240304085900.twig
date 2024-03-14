@@ -1,0 +1,20 @@
+{% extends 'team/base.html.twig' %}
+
+{% block title %}Teams
+{% endblock %}
+
+{% block body %}
+	<div class="container" style="margin-left: 10px">
+		{% if is_granted('ROLE_ADMIN') %}
+			<h1>Teams</h1>
+			{{ include('team/teamsTable.html.twig') }}
+		{% endif %}
+		{% if is_granted('ROLE_TEAM_LEADER') %}
+			<h1>Team</h1>
+			{{ include('team/teamsTable.html.twig') }}
+		{% endif %}
+		{% if is_granted('ROLE_TEAM_LEADER') %}
+			<h1>Team</h1>
+			{{ include('team/teamsTable.html.twig') }}
+		{% endif %}
+	{% endblock %}

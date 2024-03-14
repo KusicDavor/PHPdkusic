@@ -1,0 +1,34 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Register
+{% endblock %}
+
+{% block body %}
+	<nav style="height: 40px"></nav>
+
+	<div class="register-form" style="width: 20%; margin-left: 30px">
+
+		<h1>Register</h1>
+
+		{{ form_errors(registrationForm) }}
+
+		{{ form_start(registrationForm) }}
+		<div class="form-group">
+			{{ form_row(registrationForm.name, {'attr': {'class': 'form-control', 'placeholder': 'Name'}}) }}
+		</div>
+		<div class="form-group">
+			{{ form_row(registrationForm.job, {'attr': {'class': 'form-control', 'placeholder': 'Job'}}) }}
+		</div>
+		<div class="form-group">
+			{{ form_row(registrationForm.email, {'attr': {'class': 'form-control', 'placeholder': 'Email'}}) }}
+		</div>
+		<div class="form-group">
+			{{ form_row(registrationForm.plainPassword, {'attr': {'class': 'form-control', 'placeholder': 'Password'}}) }}
+		</div>
+		<div class="form-group">
+			{{ form_row(registrationForm.role, {'attr': {'class': 'form-control'}}) }}
+		</div>
+		<button type="submit" class="btn btn-primary">Register</button>
+		{{ form_end(registrationForm) }}
+	</div>
+{% endblock %}

@@ -1,0 +1,28 @@
+<style>
+	.popup-container {
+		display: none;
+		position: fixed;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		background-color: #f8d7da;
+		border: 1px solid #f5c6cb;
+		padding: 15px;
+		border-radius: 5px;
+		box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+	}
+</style>
+
+{# Your Twig template #}
+
+{% block stylesheets %}
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+{% endblock %}
+
+{% block body %}
+	{# Your HTML content #}
+
+	{% block javascripts %}
+		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+	{% endblock %}
+{% endblock %}

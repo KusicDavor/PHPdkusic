@@ -1,0 +1,18 @@
+{{ form_start(form) }}
+<div style="margin-left: 10px">
+	{{ form_widget(form) }}
+</div>
+<button style="margin-left: 10px; font-size: 14px" class="btn">{{ button_label|default('Save') }}</button>
+<a style="margin-top: 10px; margin-left: 10px; font-size: 12px" class="btn btn-primary" href=" {{ path('app_team_index') }} ">Back to list</a>
+{{ form_end(form) }}
+
+{% block javascripts %}
+	{{ parent() }}
+	<script>
+		// Check if the form has any errors
+var formErrors = {{ form_errors(form)|length }};
+if (formErrors > 0) { // Show the pop-up window
+alert('Do you wish to set the user as leader of the team?');
+}
+	</script>
+{% endblock %}

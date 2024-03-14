@@ -1,0 +1,27 @@
+{# templates/base.html.twig #}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+</head>
+<body>
+    {% if app.user %}
+        {% if 'ROLE_ADMIN' in app.user.roles %}
+            {% include 'index/admin.html.twig' %}
+            {% elseif 'ROLE_APPROVER' in app.user.roles %}
+            {% include 'index/approver.html.twig' %}
+        {% elseif 'ROLE_EMPLOYEE' in app.user.roles %}
+            {% include 'index/employee.html.twig' %}
+        {% endif %}
+    {% else %}
+        {# Guest user menu #}
+        {% include 'menu_guest.html.twig' %}
+    {% endif %}
+    <div class="content">
+        {% block content %}{% endblock %}
+    </div>
+</body>
+</html>

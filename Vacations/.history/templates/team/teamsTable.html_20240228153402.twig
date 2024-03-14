@@ -1,0 +1,34 @@
+{% if is_granted('ROLE_ADMIN') %}
+	<a style="float: inline-end; margin-right: 20px" href="{{ path('app_team_new') }}" class="btn">Create new team</a>
+{% endif %}
+
+<table class="table table-bordered table-hover table-striped">
+	<thead class="thead-dark">
+		<tr>
+			<th>ID</th>
+			<th>Team name</th>
+			<th>Team leader</th>
+			<th>Project leader</th>
+		</tr>
+	</thead>
+	<tbody>
+		{% for team in teams %}
+			<tr>
+				<td>{{ team.id }}</td>
+				<td>{{ team.teamName }}</td>
+				{% if ( team.teamLeader) %}
+					<td>{{ team.teamLeader.name }}</td>
+				{% endif %}
+
+				<td>{{ team.projectLeader.name }}</td>
+				<td class="EditBtn">
+					<a style="float: inline-end; margin: 5px" href="{{ path('app_team_edit', {'id': team.id}) }}" class="btn btn-sm btn-primary">Edit</a>
+				</td>
+			</tr>
+		{% else %}
+			<tr>
+				<td colspan="3">no records found</td>
+			</tr>
+		{% endfor %}
+	</tbody>
+</table>

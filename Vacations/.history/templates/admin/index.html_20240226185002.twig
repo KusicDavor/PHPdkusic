@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu with Dropdown</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Tahoma';
+        }
+
+        nav {
+            margin: 0 auto;
+            width: 100%;
+            height: auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background: #37bc9b;
+            padding: 10px;
+        }
+
+        nav ul {
+            margin: 0;
+            padding: 0;
+            list-style-type: none;
+        }
+
+        nav ul li {
+            position: relative;
+            margin: 0 20px 0 0;
+            float: left;
+        }
+
+        nav ul li > a:after {
+            content: ' »';
+        }
+
+        nav ul li > a:only-child:after {
+            content: '';
+        }
+
+        nav ul li a {
+            padding: 10px;
+            display: inline-block;
+            color: white;
+            text-decoration: none;
+        }
+
+        nav ul li a:hover {
+            opacity: 0.5;
+        }
+
+        nav ul li ul {
+            display: none;
+            position: absolute;
+            left: 0;
+            background: #37bc9b;
+            float: left;
+        }
+
+        nav ul li ul li {
+            width: 100%;
+            border-bottom: 1px solid rgba(255, 255, 255, .3);
+        }
+
+        nav ul li:hover ul {
+            display: block;
+        }
+
+        .user-info {
+            display: flex;
+            align-items: center;
+        }
+
+        .user-info button {
+            margin-left: 20px;
+            padding: 10px;
+            background-color: #f44336;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        .user-info button:hover {
+            opacity: 0.8;
+        }
+    </style>
+</head>
+<body>
+<nav>
+    <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/administration">Administration</a>
+            <ul>
+                <li><a href="/users">Users</a></li>
+                <li><a href="/teams">Teams</a></li>
+                <li><a href="/projects">Projects</a></li>
+            </ul>
+        </li>
+        <li><a href="/databases">Databases</a></li>
+        <li><a href="/organization">Organization</a>
+            <ul>
+                <li><a href="/requests">Requests</a></li>
+            </ul>
+        </li>
+    </ul>
+    <div class="user-info">
+        <span>Logged User: John Doe</span> <!-- Replace John Doe with actual user's name -->
+        <button onclick="logout()">Logout</button>
+    </div>
+</nav>
+<script>
+    function logout() {
+        // Implement logout functionality here
+        alert('Logout clicked!');
+    }
+</script>
+</body>
+</html>

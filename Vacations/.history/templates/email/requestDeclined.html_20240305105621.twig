@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Request Denied</title>
+	</head>
+	<body>
+		<h1>Your request has been denied</h1>
+		<p>Hello
+			{{ user.username }},</p>
+		<p>We regret to inform you that your request with the following details has been denied:</p>
+		<ul>
+			<li>Request ID:
+			<li>Start Date:
+				{{ request.startDate|date('Y-m-d') }}</li>
+			<li>End Date:
+				{{ request.endDate|date('Y-m-d') }}</li>
+		</ul>
+		<p>Please contact us for further assistance.</p>
+	</body>
+</html>

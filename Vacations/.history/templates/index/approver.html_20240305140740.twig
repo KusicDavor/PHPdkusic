@@ -1,0 +1,39 @@
+{% extends 'index/index.html.twig' %}
+{% extends 'index/base.html.twig' %}
+
+{% block body %}
+	<nav>
+		<ul>
+			<li>
+				<a href="/">Home</a>
+			</li>
+			<li>
+				<a href="/teams">Team</a>
+			</li>
+			<li>
+				<a href="/documents">Documents</a>
+			</li>
+			<li>
+				<a href="">Requests</a>
+				<ul>
+					<li><a href="/requests/work">Work</a></li>
+					<li><a href="/requests/sick-leave">Sick leave</a></li>
+					<li><a href="/requests/vacation">Vacation</a></li>
+				</ul>
+			</li>
+		</ul>
+		<div class="user-info" style="margin-right: 20px">
+			{% if app.user %}
+				<div class="dropdown">
+					<button class="btn btn-secondary dropdown-toggle" type="button" id="userDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+						Logged:
+						{{ app.user.email }}
+					</button>
+					<a class="dropdown-item" href="{{ path('app_logout') }}">Logout</a>
+				</div>
+			{% else %}
+				<a href="{{ path('app_login') }}">Login</a>
+			{% endif %}
+		</div>
+	</nav>
+{% endblock %}

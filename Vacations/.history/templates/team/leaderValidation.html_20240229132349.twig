@@ -1,0 +1,9 @@
+{# Your Twig template #}
+
+{% block javascripts %}
+	<script>
+		{% if form_errors(form)|length > 0 %}
+// Display a pop-up window with the error message
+alert("{{ form_errors(form) }}"){% endif %}
+	</script>
+{% endblock %}

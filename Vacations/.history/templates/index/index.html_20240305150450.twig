@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Home</title>
+	</head>
+	<body>
+		{% if app.user %}
+			{% if 'ROLE_ADMIN' in app.user.roles %}
+				{% include 'index/admin.html.twig' %}
+				{% include 'index/stats.html.twig' with {'stats': stats} %}
+			{% elseif 'ROLE_TEAM_LEADER' in app.user.roles %}
+				{% include 'index/approver.html.twig' %}
+			{% elseif 'ROLE_PROJECT_LEADER' in app.user.roles %}
+				{% include 'index/approver.html.twig' %}
+			{% elseif 'ROLE_EMPLOYEE' in app.user.roles %}
+				{% include 'index/employee.html.twig' %}
+			{% endif %}
+		{% endif %}
+
+		{% if 'ROLE_ADMIN' in app.user.roles %}{% endif %}
+
+	</body>
+</html>

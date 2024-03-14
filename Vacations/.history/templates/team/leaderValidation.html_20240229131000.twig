@@ -1,0 +1,32 @@
+<style>
+	.popup-container {
+		display: none;
+		position: fixed;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		background-color: #f8d7da;
+		border: 1px solid #f5c6cb;
+		padding: 15px;
+		border-radius: 5px;
+		box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+	}
+</style>
+
+{% block body %}
+	<div class="popup-container" id="popup-container">
+		<p id="popup-message"></p>
+	</div>
+	<script>
+		{% if form_errors(form)|length > 0 %}
+{
+# var popupContainer = document.getElementById('popup-container');
+{# # #}
+}
+var popupMessage = document.getElementById('popup-message');
+var errorMessage = "{{ form_errors(form)|join(' ') }}";
+
+popupMessage.textContent = errorMessage;
+popupContainer.style.display = 'block';{% endif %}
+	</script>
+{% endblock %}

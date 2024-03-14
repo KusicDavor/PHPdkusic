@@ -1,0 +1,39 @@
+{% extends 'team/base.html.twig' %}
+
+{% block title %}Teams
+{% endblock %}
+
+{% block body %}
+	<div class="container" style="margin-left: 10px">
+		<h1>Teams</h1>
+		{% if is_granted('ROLE_ADMIN') %}
+			<a style="float: inline-end; margin-right: 20px" href="{{ path('app_user_new') }}" class="btn">Create </a>
+		{% endif %}
+
+		<table class="table table-bordered table-hover table-striped">
+			<thead class="thead-dark">
+				<tr>
+					<th>Id</th>
+					<th>TeamName</th>
+					<th>actions</th>
+				</tr>
+			</thead>
+			<tbody>
+				{% for team in teams %}
+					<tr>
+						<td>{{ team.id }}</td>
+						<td>{{ team.teamName }}</td>
+						<td>
+							<a href="{{ path('app_team_edit', {'id': team.id}) }}">edit</a>
+						</td>
+					</tr>
+				{% else %}
+					<tr>
+						<td colspan="3">no records found</td>
+					</tr>
+				{% endfor %}
+			</tbody>
+		</table>
+
+		<a href="{{ path('app_team_new') }}">Create new</a>
+	{% endblock %}

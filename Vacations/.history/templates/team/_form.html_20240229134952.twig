@@ -1,0 +1,10 @@
+{{ form_start(form) }}
+<div style="margin-left: 10px">
+	{{ form_widget(form) }}
+</div>
+<button style="margin-left: 10px; font-size: 14px" class="btn">{{ button_label|default('Save') }}</button>
+<a style="font-size: 12px" class="btn btn-primary" href=" {{ path('app_team_index') }} ">Back to list</a>
+{% if is_granted('ROLE_ADMIN') %}
+	<a style="float: inline-end; margin-right: 20px" href="{{ path('app_team_new') }}" class="btn">Create new team</a>
+{% endif %}
+{{ form_end(form) }}
