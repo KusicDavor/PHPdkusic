@@ -40,3 +40,6 @@ Pomoćne rute:
     - nisam prije radio u Laravelu/Symfonyu, a u PHP-u vrlo osnovne web stranice i forme pa mi je ovo bilo zabavno, prebacivati ono što sam već znao napraviti (u Javi, C#) ali sad u PHP-u
     - neki manji problemi (konfiguracija dockera, slaganje upita kod parametara, sitne greške, korištenje pogrešnih funkcija) su mi uzele previše vremena, a što bi vjerojatno preskočio da ne radim "prvi put" s ovim alatima i jezikom
     - kod slaganja seedera za generiranje podataka mi se sviđa što je moguće koristiti funkcije/sekvence za dobivanje slučajnosti i alternativnih vrijednosti (npr. povremeno postavljanje kategorije u NULL)
+
+![image](https://github.com/KusicDavor/Projekti/assets/81571301/47c334a8-2489-470e-9656-eb504ab14ea4)
+![image](https://github.com/KusicDavor/Projekti/assets/81571301/8a372de2-52a9-48d2-864a-dc59901b9042)
