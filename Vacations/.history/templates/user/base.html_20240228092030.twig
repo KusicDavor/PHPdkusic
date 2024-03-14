@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>
+			{% block title %}Welcome!
+			{% endblock %}
+		</title>
+		<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text><text y=%221.3em%22 x=%220.2em%22 font-size=%2276%22 fill=%22%23fff%22>sf</text></svg>"> {% block stylesheets %}{% endblock %}
+
+		{% block javascripts %}
+			{% block importmap %}
+				{{ importmap('app') }}
+			{% endblock %}
+		{% endblock %}
+
+		<style>
+			body {
+				margin: 0;
+				font-family: 'Tahoma';
+				background-color: white;
+			}
+
+			nav {
+				margin: 0 auto;
+				width: 100%;
+				height: auto;
+				display: flex;
+				align-items: center;
+				justify-content: space-between;
+				background: #37bc9b;
+				padding: 10px;
+			}
+
+			nav ul {
+				margin: 0;
+				padding: 0;
+				list-style-type: none;
+			}
+
+			nav ul li {
+				position: relative;
+				margin: 0 20px 0 0;
+				float: left;
+			}
+
+			nav ul li > a:after {
+				content: ' »';
+			}
+
+			nav ul li > a:only-child:after {
+				content: '';
+			}
+
+			nav ul li a {
+				padding: 10px;
+				display: inline-block;
+				color: white;
+				text-decoration: none;
+			}
+
+			nav ul li a:hover {
+				opacity: 0.5;
+			}
+
+			nav ul li ul {
+				display: none;
+				position: absolute;
+				left: 0;
+				background: #37bc9b;
+				float: left;
+			}
+
+			nav ul li ul li {
+				width: 100%;
+				border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+			}
+
+			nav ul li:hover ul {
+				display: block;
+			}
+
+			.user-info {
+				display: flex;
+				align-items: center;
+			}
+
+			.user-info button {
+				margin-left: 20px;
+				padding: 10px;
+				background-color: #f44336;
+				color: white;
+				border: none;
+				cursor: pointer;
+			}
+
+			.user-info button:hover {
+				opacity: 0.8;
+			}
+
+			.user-info {
+				display: flex;
+				align-items: center;
+			}
+
+			.user-dropdown-toggle {
+				color: white;
+				background-color: #37bc9b; /* Button background color */
+				border-color: #37bc9b; /* Button border color */
+			}
+
+			.dropdown-menu {
+				background-color: #37bc9b; /* Dropdown menu background color */
+			}
+
+			.dropdown-item {
+				color: white; /* Dropdown item text color */
+			}
+
+			.dropdown-item:hover {
+				background-color: #2a9055; /* Hover background color for dropdown items */
+			}
+
+			.btn {
+				display: inline-block;
+				padding: 8px;
+				background-color: #007bff; /* Add your desired background color */
+				color: #fff; /* Add your desired text color */
+				text-decoration: none;
+				border: none;
+				border-radius: 5px;
+				cursor: pointer;
+			}
+
+			.btn:hover {
+				background-color: #0056b3; /* Add your desired background color on hover */
+			}
+
+			.table {
+				width: 100%;
+				border-collapse: collapse;
+			}
+
+			.table th,
+			.table td {
+				padding: 8px;
+				text-align: left;
+				border: 1px solid #ddd; /* Border color */
+			}
+
+			table .EditShowBtn {
+				border: none;
+				float: left;
+			}
+
+			.table th {
+				background-color: #343a40; /* Header background color */
+				color: #fff; /* Header text color */
+			}
+
+			.table tbody tr:nth-child(even) {
+				background-color: #f2f2f2; /* Even row background color */
+			}
+
+.table attributes
+
+
+			.table tbody tr:hover {
+				background-color: #ddd; /* Hover row background color */
+			}
+
+			.form-group {
+				margin-bottom: 20px;
+			}
+
+			.btn {
+				margin-right: 10px;
+			}
+
+			.form-control {
+				width: 100%;
+				padding: 10px;
+				margin-bottom: 15px;
+				border: 1px solid #ced4da;
+				border-radius: 5px;
+				box-sizing: border-box;
+				transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+			}
+		</style>
+
+		<nav>
+			<ul>
+				<li>
+					<a href="/index">Home</a>
+				</li>
+				<li>
+					<a href="">Administration</a>
+					<ul>
+						<li><a href="/users">Users</a></li>
+						<li><a href="/teams">Teams</a></li>
+						<li><a href="/projects">Projects</a></li>
+					</ul>
+				</li>
+				<li>
+					<a href="/databases">Databases</a>
+				</li>
+				<li>
+					<a href="/organization">Organization</a>
+					<ul>
+						<li><a href="/requests">Requests</a></li>
+					</ul>
+				</li>
+			</ul>
+			<div class="user-info" style="margin-right: 20px">
+				{% if app.user %}
+					<div class="dropdown">
+						<button class="btn btn-secondary dropdown-toggle" type="button" id="userDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+							Logged:
+							{{ app.user.email }}
+						</button>
+						<a class="dropdown-item" href="{{ path('app_logout') }}">Logout</a>
+					</div>
+				{% else %}
+					<a href="{{ path('app_login') }}">Login</a>
+				{% endif %}
+			</div>
+		</nav>
+
+	</head>
+	<body>
+		{% block body %}{% endblock %}
+	</body>
+</html>

@@ -1,0 +1,19 @@
+{% extends 'vacation_request/base.html.twig' %}
+
+{% block title %}Vacation requests
+{% endblock %}
+
+{% block body %}
+	<div class="container" style="margin-left: 10px">
+		<h1>Vacation requests</h1>
+		{{ include('vacation_request/requestsTable.html.twig') }}
+		<h1>Upcoming vacations</h1>
+		{% for vacation_request in vacation_requests %}
+			{% if not is_granted('ROLE_ADMIN' or 'ROLE_TEAM_LEADER' or 'ROLE_PROJECT_LEADER') and vacation_request.teamLeadAction == true and vacation_request.projectLeadAction == false %}
+				{% if app.user.team.id == vacation_request.user.team.id %}
+					{{ include('vacation_request/tables/tableEmployee.html.twig') }}
+				{% endif %}
+			{% endif %}
+		{% endfor %}
+	</div>
+{% endblock %}

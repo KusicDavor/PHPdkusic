@@ -1,0 +1,41 @@
+<table class="table">
+	<thead>
+		<tr>
+			<th>Employee</th>
+			<th>Job</th>
+			<th>Number of currently available days</th>
+			<th>Start date</th>
+			<th>End date</th>
+			<th>Note</th>
+			<th>TeamLeadAction</th>
+			<th>ProjectLeadAction</th>
+			<th>Status</th>
+			<th>actions</th>
+		</tr>
+	</thead>
+	<tbody>
+		{% for vacation_request in vacation_requests %}
+			<tr>
+				<td>{{ vacation_request.user.name }}</td>
+				<td>{{ vacation_request.user.job }}</td>
+				<td>{{ vacation_request.user.vacationDays }}</td>
+				<td>{{ vacation_request.startDate ? vacation_request.startDate|date('Y-m-d') : '' }}</td>
+				<td>{{ vacation_request.endDate ? vacation_request.endDate|date('Y-m-d') : '' }}</td>
+				<td>{{ vacation_request.note }}</td>
+				<td>{{ vacation_request.teamLeadAction ? 'Yes' : 'No' }}</td>
+				<td>{{ vacation_request.projectLeadAction ? 'Yes' : 'No' }}</td>
+				<td>{{ vacation_request.status }}</td>
+				<td>
+				<a style="float: inline-end; margin: 5px" href="{{ path('app_user_edit', {'id': user.id}) }}" class="btn btn-sm btn-primary">Edit</a>
+					<a style="float: inline-end; margin: 5px" href="{{ path('app_vacation_request_edit', {'id': vacation_request.id}) }} class="btn btn-sm btn-primary">edit</a>
+				</td>
+			</tr>
+		{% else %}
+			<tr>
+				<td colspan="8">no records found</td>
+			</tr>
+		{% endfor %}
+	</tbody>
+</table>
+
+<a href="{{ path('app_vacation_request_new') }}">Create new</a>

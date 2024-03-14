@@ -1,0 +1,21 @@
+{% if is_granted('ROLE_TEAM_LEADER') %}
+	{% if vacation_request.teamLeadAction is null and (vacation_request.projectLeadAction is null or vacation_request.projectLeadAction != false) %}
+		
+		<td>
+			<form action="{{ path('app_vacation_decide', {'id': vacation_request.id}) }}" method="post" style="display: inline;">
+				<input type="hidden" name="_token" value="{{ csrf_token('teamLeadApprove' ~ vacation_request.id) }}">
+				<input type="hidden" name="action" value="teamLeaderApprove">
+				<button type="submit" class="btn btn-success">Approve</button>
+			</form>
+			<form action="{{ path('app_vacation_decide', {'id': vacation_request.id}) }}" method="post" style="display: inline;">
+				<input type="hidden" name="_token" value="{{ csrf_token('teamLeadApprove' ~ vacation_request.id) }}">
+				<input type="hidden" name="action" value="teamLeaderDecline">
+				<button type="submit" class="btn btn-success">Decline</button>
+			</form>
+		</td>
+	{% elseif vacation_request.teamLeadAction == true and vacation_request.projectLeadAction == true %}
+		<td>Approved</td>
+	{% else %}
+		<td>Declined</td>
+	{% endif %}
+{% endif %}

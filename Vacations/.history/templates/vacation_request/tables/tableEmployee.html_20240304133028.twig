@@ -1,0 +1,17 @@
+<tr>
+	<td>{{ vacation_request.user.name }}</td>
+	<td>{{ vacation_request.user.job }}</td>
+	<td>{{ vacation_request.user.vacationDays }}</td>
+	<td>{{ vacation_request.startDate ? vacation_request.startDate|date('d.m.Y') : '' }}</td>
+	<td>{{ vacation_request.endDate ? vacation_request.endDate|date('d.m.Y') : '' }}</td>
+	<td>{{ vacation_request.note }}</td>
+
+	{% if vacation_request.teamLeadAction == true and vacation_request.projectLeadAction == true %}
+		<td>Approved</td>
+	{% elseif vacation_request.teamLeadAction is null or vacation_request.projectLeadAction is null %}
+	{% elseif vacation_request.teamLeadAction == false and vacation_request.teamLeadAction is not null %}
+		<td>Declined</td>
+	{% else %}
+		<td>In process</td>
+	{% endif %}
+{% endif %}</tr>

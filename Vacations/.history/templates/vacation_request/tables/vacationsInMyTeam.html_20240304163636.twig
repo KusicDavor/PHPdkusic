@@ -1,0 +1,31 @@
+{% for vacation_request in vacation_requests %}
+	{% if not is_granted('ROLE_ADMIN' or 'ROLE_TEAM_LEADER' or 'ROLE_PROJECT_LEADER') and vacation_request.teamLeadAction == true and vacation_request.projectLeadAction == false %}
+		{% if app.user.team.id == vacation_request.user.team.id %}
+			<table class="table">
+				<thead>
+					<tr>
+						<th>Employee</th>
+						<th>Job</th>
+						<th>Number of currently available days</th>
+						<th>Start date</th>
+						<th>End date</th>
+						<th>Note</th>
+						<th>Vacation status</th>
+					</tr>
+				</thead>
+				<tbody>
+					{% for vacation_request in vacation_requests %}
+					
+						<td>{{ vacation_request.user.name }}</td>
+						<td>{{ vacation_request.user.job }}</td>
+						<td>{{ vacation_request.user.team.teamname }}</td>
+						<td>{{ vacation_request.user.vacationDays }}</td>
+						<td>{{ vacation_request.startDate ? vacation_request.startDate|date('d.m.Y') : '' }}</td>
+						<td>{{ vacation_request.endDate ? vacation_request.endDate|date('d.m.Y') : '' }}</td>
+						<td>{{ vacation_request.note }}</td>
+					{% endfor %}
+				</tbody>
+			</table>
+		{% endif %}
+	{% endif %}
+{% endfor %}

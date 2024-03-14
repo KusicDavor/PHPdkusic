@@ -1,0 +1,64 @@
+{% if is_granted('ROLE_ADMIN') %}
+	<a style="float: inline-end; margin-right: 20px" href="{{ path('app_team_new') }}" class="btn">Create new team</a>
+{% endif %}
+
+<style>
+	table tr {
+		text-align: center;
+	}
+</style>
+
+{% for team in teams %}
+	{% for user in team.users %}
+		<table class="table table-bordered">
+			<thead>
+				<tr>
+					<th style="width: 20%">Team name:
+						{{ team.teamName }}</th>
+					<th style="width: 20%">Team leader:
+						{% if team.teamLeader %}
+							{{ team.teamLeader.name }}
+						{% else %}
+							Not set
+						{% endif %}
+					</th>
+					<th style="width: 20%">Project leader:
+						{% if team.projectLeader %}
+							{{ team.projectLeader.name }}
+						{% else %}
+							Not set
+						{% endif %}
+					</th>
+				</tr>
+			</thead>
+		</table>
+		<table class="table table-bordered table-hover table-striped">
+			<thead class="thead-dark">
+				<tr>
+					<td style="width: 15%">Member</td>
+					<td>Job</td>
+					<td>Role</td>
+					<td style="width: 25%">Days of vacation available</td>
+					<td>Start date</td>
+					<td>End date</td>
+					<td class="EditBtn">
+						<a style="float: inline-end; margin: 5px" href="{{ path('app_team_edit', {'id': team.id}) }}" class="btn btn-sm btn-primary">Edit team</a>
+					</td>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>{{ user.name }}</td>
+					<td>{{ user.job }}</td>
+					<td>{{ user.role.roleName }}</td>
+					<td>{{ user.vacationDays }}</td>
+					<td>startdate</td>
+					<td>enddate</td>
+					<td class="EditBtn">
+						<a style="float: inline-end; margin: 5px" href="{{ path('app_user_edit', {'id': user.id, 'origin': 'teams'}) }}" class="btn btn-sm btn-primary">Edit user</a>
+					</td>
+				</tr>
+			{% endfor %}
+		</tbody>
+	</table>
+{% endfor %}

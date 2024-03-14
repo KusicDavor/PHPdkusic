@@ -1,0 +1,36 @@
+<tr>
+	<td>{{ vacation_request.user.name }}</td>
+	<td>{{ vacation_request.user.job }}</td>
+	<td>{{ vacation_request.user.vacationDays }}</td>
+	<td>{{ vacation_request.startDate ? vacation_request.startDate|date('d.m.Y') : '' }}</td>
+	<td>{{ vacation_request.endDate ? vacation_request.endDate|date('d.m.Y') : '' }}</td>
+	<td>{{ vacation_request.note }}</td>
+
+	{{ include('vacation_request/tables/vacationStatus.html.twig') }}
+</tr>
+
+<tbody>
+	{% for vacation_request in vacation_requests %}
+		<td>{{ vacation_request.user.name }}</td>
+		<td>{{ vacation_request.user.job }}</td>
+		<td>{{ vacation_request.user.team.teamname }}</td>
+		<td>{{ vacation_request.user.vacationDays }}</td>
+		<td>{{ vacation_request.startDate ? vacation_request.startDate|date('d.m.Y') : '' }}</td>
+		<td>{{ vacation_request.endDate ? vacation_request.endDate|date('d.m.Y') : '' }}</td>
+		<td>{{ vacation_request.note }}</td>
+		{% if app.user.team.id == vacation_request.user.team.id %}
+			<tr>
+				{% if not is_granted('ROLE_ADMIN' or 'ROLE_TEAM_LEADER' or 'ROLE_PROJECT_LEADER') %}
+					{% if app.user.id == vacation_request.user.id %}
+						{{ include('vacation_request/tables/tableEmployee.html.twig') }}
+					{% endif %}
+				{% endif %}
+
+				{% if not is_granted('ROLE_ADMIN') %}
+					{{ include('vacation_request/tables/tableTeamLeader.html.twig') }}
+					{{ include('vacation_request/tables/tableProjectLeader.html.twig') }}
+				{% endif %}
+			</tr>
+		{% endif %}
+	{% endif %}
+{% endfor %}</tbody>

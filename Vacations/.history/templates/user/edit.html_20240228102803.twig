@@ -1,0 +1,14 @@
+{% extends 'user/base.html.twig' %}
+
+{% block title %}Edit User
+{% endblock %}
+
+{% block body %}
+	<div class="form-container">
+		{{ include('user/_form.html.twig', {'button_label': 'Update'}) }}
+		<div style="display: inline-block;">
+			{{ include('user/_delete_form.html.twig') }}
+		</div>
+	</div>
+{% endblock %}
+

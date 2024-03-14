@@ -1,0 +1,8 @@
+{% if vacation_request.teamLeadAction == true and vacation_request.projectLeadAction == true %}
+	<td>Approved</td>
+{% elseif vacation_request.teamLeadAction is null or vacation_request.projectLeadAction is null and vacation_request.teamLeadAction != false or vacation_request.projectLeadAction != false %}
+	<td>In process</td>
+
+{% elseif vacation_request.teamLeadAction == false %}
+	<td>Declined</td>
+{% endif %}

@@ -1,0 +1,8 @@
+<h1>Upcoming vacations</h1>
+{% for vacation_request in vacation_requests %}
+	{% if not is_granted('ROLE_ADMIN' or 'ROLE_TEAM_LEADER' or 'ROLE_PROJECT_LEADER') and vacation_request.teamLeadAction == true and vacation_request.projectLeadAction == false %}
+		{% if app.user.team.id == vacation_request.user.team.id %}
+
+		{% endif %}
+	{% endif %}
+{% endfor %}

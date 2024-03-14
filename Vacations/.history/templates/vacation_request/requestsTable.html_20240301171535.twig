@@ -1,0 +1,39 @@
+<table class="table">
+	<thead>
+		<tr>
+			<th>Employee</th>
+			<th>Job</th>
+			<th>Num</th>
+			<th>Note</th>
+			<th>TeamLeadAction</th>
+			<th>ProjectLeadAction</th>
+			<th>Status</th>
+			<th>actions</th>
+		</tr>
+	</thead>
+	<tbody>
+		{% for vacation_request in vacation_requests %}
+			<tr>
+				<td>{{ vacation_request.user.name }}</td>
+				<td>{{ vacation_request.user.job }}</td>
+				<td>{{ vacation_request.user.vacationDays }}</td>
+				<td>{{ vacation_request.startDate ? vacation_request.startDate|date('Y-m-d') : '' }}</td>
+				<td>{{ vacation_request.endDate ? vacation_request.endDate|date('Y-m-d') : '' }}</td>
+				<td>{{ vacation_request.note }}</td>
+				<td>{{ vacation_request.teamLeadAction ? 'Yes' : 'No' }}</td>
+				<td>{{ vacation_request.projectLeadAction ? 'Yes' : 'No' }}</td>
+				<td>{{ vacation_request.status }}</td>
+				<td>
+					<a href="{{ path('app_vacation_request_show', {'id': vacation_request.id}) }}">show</a>
+					<a href="{{ path('app_vacation_request_edit', {'id': vacation_request.id}) }}">edit</a>
+				</td>
+			</tr>
+		{% else %}
+			<tr>
+				<td colspan="8">no records found</td>
+			</tr>
+		{% endfor %}
+	</tbody>
+</table>
+
+<a href="{{ path('app_vacation_request_new') }}">Create new</a>

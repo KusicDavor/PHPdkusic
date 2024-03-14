@@ -1,0 +1,10 @@
+{% extends 'vacation_request/base.html.twig' %}
+
+{% block title %}New vacation request
+{% endblock %}
+
+{% block body %}
+	<h1>Create new vacation request</h1>
+	<a>You have available next {{ user.vacationDays }}</a>
+	{{ include('vacation_request/_form.html.twig') }}
+{% endblock %}

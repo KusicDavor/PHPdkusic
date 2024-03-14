@@ -1,0 +1,5 @@
+{{ form_start(form) }}
+    {{ form_widget(form) }}
+    <button style="margin-top: 10px" class="btn">{{ button_label|default('Save') }}</button>
+     <a class="btn" style="; display: inline-block; display: inline-block" href="{{ path('app_user_index') }}">back to list</a>
+{{ form_end(form) }}

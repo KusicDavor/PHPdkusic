@@ -1,0 +1,16 @@
+{% if is_granted('ROLE_PROJECT_LEADER') %}
+	<td>{{ vacation_request.user.name }}</td>
+	<td>{{ vacation_request.user.job }}</td>
+	<td>{{ vacation_request.user.vacationDays }}</td>
+	<td>{{ vacation_request.startDate ? vacation_request.startDate|date('d.m.Y') : '' }}</td>
+	<td>{{ vacation_request.endDate ? vacation_request.endDate|date('d.m.Y') : '' }}</td>
+	<td>{{ vacation_request.note }}</td>
+
+	{% if vacation_request.teamLeadAction == true and vacation_request.projectLeadAction == true %}
+		<td>Approved</td>
+		{% if vacation_request.teamLeadAction == true and vacation_request.projectLeadAction == true %}
+			<td>Approved</td>
+		{% else %}
+			<td>Declined</td>
+		{% endif %}
+	{% endif %}

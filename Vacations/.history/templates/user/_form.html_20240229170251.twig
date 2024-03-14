@@ -1,0 +1,9 @@
+{{ form_start(form) }}
+<div style="margin-left: 10px">
+	{{ form_widget(form) }}
+</div>
+<button style="margin-left: 10px; font-size: 14px" class="btn">{{ button_label|default('Save') }}</button>
+{{ form_end(form) }}
+{% if origin == 'users' %}
+	<a style="margin-top: 10px; margin-left: 10px; font-size: 12px" class="btn btn-primary" href="{{ path('app_user_index') }}">Go back to user list</a>
+

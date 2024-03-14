@@ -1,0 +1,37 @@
+{% if is_granted('ROLE_ADMIN') %}
+	{# If the user is an admin, list all teams #}
+	{% for team in teams %}
+		<table class="table table-bordered" style="width: 100%">
+			<thead>
+				<tr>
+					<th style="width: 20%">Team name:
+						{{ team.teamName }}</th>
+					<th style="width: 20%">Team leader:
+						{% if team.teamLeader %}
+							{{ team.teamLeader.name }}
+						{% endif %}
+					</th>
+				</tr>
+			</thead>
+		</table>
+	{% endfor %}
+{% else %}
+	{% set currentUser = app.user %}
+	{% for team in teams %}
+		{% if team.teamLeader == currentUser %}
+			<table class="table table-bordered" style="width: 100%">
+				<thead>
+					<tr>
+						<th style="width: 20%">Team name:
+							{{ team.teamName }}</th>
+						<th style="width: 20%">Team leader:
+							{% if team.teamLeader %}
+								{{ team.teamLeader.name }}
+							{% endif %}
+						</th>
+					</tr>
+				</thead>
+			</table>
+		{% endif %}
+	{% endfor %}
+{% endif %}

@@ -1,0 +1,59 @@
+{% extends 'user/base.html.twig' %}
+
+{% block title %}User index{% endblock %}
+
+{% block body %}
+    <div class="container">
+        <h1 class="text-center my-4">User Index</h1>
+
+        <div class="row justify-content-center">
+            <div class="col-md-10">
+                <div class="table-responsive">
+                    <table class="table table-striped table-bordered">
+                        <thead class="thead-dark">
+                            <tr>
+                                <th scope="col">Id</th>
+                                <th scope="col">Email</th>
+                                <th scope="col">Roles</th>
+                                <th scope="col">Password</th>
+                                <th scope="col">Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        {% for user in users %}
+                            <tr>
+                                <td>{{ user.id }}</td>
+                                <td>{{ user.email }}</td>
+                                <td>{{ user.roles ? user.roles|json_encode : '' }}</td>
+                                <td>{{ user.password }}</td>
+                                <td>
+                                    <a href="{{ path('app_user_show', {'id': user.id}) }}" class="btn btn-sm btn-info">Show</a>
+                                    <a href="{{ path('app_user_edit', {'id': user.id}) }}" class="btn btn-sm btn-primary">Edit</a>
+                                </td>
+                            </tr>
+                        {% else %}
+                            <tr>
+                                <td colspan="5" class="text-center">No records found</td>
+                            </tr>
+                        {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <div class="row justify-content-end">
+            <div class="col-md-2 mt-4">
+                <div class="dropdown">
+                    <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="userDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Logged: {{ app.user.email }} <span class="caret"></span>
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="userDropdown">
+                        <a class="dropdown-item" href="#">Edit Profile</a>
+                        <a class="dropdown-item" href="{{ path('app_logout') }}">Logout</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

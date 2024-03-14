@@ -1,0 +1,29 @@
+{% if is_granted('ROLE_PROJECT_LEADER') %}
+	<td>{{ vacation_request.user.name }}</td>
+	<td>{{ vacation_request.user.job }}</td>
+	<td>{{ vacation_request.user.vacationDays }}</td>
+	<td>{{ vacation_request.startDate ? vacation_request.startDate|date('d.m.Y') : '' }}</td>
+	<td>{{ vacation_request.endDate ? vacation_request.endDate|date('d.m.Y') : '' }}</td>
+	<td>{{ vacation_request.note }}</td>
+
+	{% if vacation_request.projectLeadAction is null and (vacation_request.teamLeadAction is null or vacation_request.teamLeadAction != false) %}
+		{% if not is_granted('ROLE_ADMIN') %}
+			<td>
+				<form action="{{ path('app_vacation_decide', {'id': vacation_request.id}) }}" method="post" style="display: inline;">
+					<input type="hidden" name="_token" value="{{ csrf_token('teamLeadApprove' ~ vacation_request.id) }}">
+					<input type="hidden" name="action" value="projectLeaderApprove">
+					<button type="submit" class="btn btn-success">Approve</button>
+				</form>
+				<form action="{{ path('app_vacation_decide', {'id': vacation_request.id}) }}" method="post" style="display: inline;">
+					<input type="hidden" name="_token" value="{{ csrf_token('teamLeadApprove' ~ vacation_request.id) }}">
+					<input type="hidden" name="action" value="projectLeaderDecline">
+					<button type="submit" class="btn btn-success">Decline</button>
+				</form>
+			</td>
+		{% endif %}
+	{% elseif vacation_request.teamLeadAction == true and vacation_request.projectLeadAction == true %}
+		<td>Approved</td>
+	{% else %}
+		<td>Declined</td>
+	{% endif %}
+{% endif %}

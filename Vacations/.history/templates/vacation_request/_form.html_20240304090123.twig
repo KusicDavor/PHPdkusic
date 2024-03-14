@@ -1,0 +1,5 @@
+{{ form_start(form) }}
+{{ form_widget(form) }}
+<button class="btn">{{ button_label|default('Send request') }}</button>
+<a style="margin-top: 10px; margin-left: 10px; font-size: 12px" class="btn btn-primary" href=" {{ path('app_vacation_request_index') }} ">Back to list</a>
+{{ form_end(form) }}

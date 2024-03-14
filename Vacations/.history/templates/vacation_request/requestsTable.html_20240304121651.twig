@@ -1,0 +1,38 @@
+<a style="float: inline-block; margin-left: 20px; margin-bottom: 10px" href="{{ path('app_vacation_request_new') }}" class="btn">New vacation request</a>
+<table class="table">
+	<thead>
+		<tr>
+			<th>Employee</th>
+			<th>Job</th>
+			<th>Number of currently available days</th>
+			<th>Start date</th>
+			<th>End date</th>
+			<th>Note</th>
+			{% if is_granted('ROLE_TEAM_LEADER') %}
+				<th>Vacation status</th>
+			{% endif %}
+			{% if is_granted('ROLE_PROJECT_LEADER') %}
+				<th>Vacation status</th>
+			{% endif %}
+		</tr>
+	</thead>
+	<tbody>
+		{% for vacation_request in vacation_requests %}
+			{% if app.user.team.id == vacation_request.user.team.id %}
+				<tr>
+				if ()
+					{{ include('vacation_request/tables/tableAdmin.html.twig') }}
+					{{ include('vacation_request/tables/tableTeamLeader.html.twig') }}
+					{{ include('vacation_request/tables/tableProjectLeader.html.twig') }}
+
+					{% if is_granted('EDIT', vacation_request) %}
+						<td>
+							<a style="float: inline-end; margin: 5px" href="{{ path('app_vacation_request_edit', {'id': vacation_request.id}) }}" class=" btn btn-sm btn-primary">
+								Edit</a>
+						</td>
+					{% endif %}
+				</tr>
+			{% endif %}
+		{% endfor %}
+	</tbody>
+</tbody></table>

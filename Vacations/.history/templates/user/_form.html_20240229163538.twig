@@ -1,0 +1,14 @@
+{{ form_start(form) }}
+<div style="margin-left: 10px">
+	{{ form_widget(form) }}
+</div>
+<button style="margin-left: 10px; font-size: 14px" class="btn">{{ button_label|default('Save') }}</button>
+<a style="margin-top: 10px; margin-left: 10px; font-size: 12px" class="btn btn-primary" href=" {{ path('app_user_index') }} ">Back to list</a>
+{{ form_end(form) }}
+
+
+{% if referer == 'user_list' %}
+    <a href="{{ path('user_list') }}">Go back to user list</a>
+{% elseif referer == 'team_list' %}
+    <a href="{{ path('team_list') }}">Go back to team list</a>
+{% endif %}

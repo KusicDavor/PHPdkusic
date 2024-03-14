@@ -1,0 +1,53 @@
+{% extends 'user/base.html.twig' %}
+
+{% block title %}Users
+{% endblock %}
+
+{% block body %}
+	<div class="container">
+		<h1>Users</h1>
+
+		{% if is_granted('ROLE_ADMIN') %}
+			<a style="float: inline-end; margin-right: 20px" href="{{ path('app_user_new') }}" class="btn">Add a new User</a>
+		{% endif %}
+
+		<table class="table table-bordered table-hover table-striped">
+			<thead class="thead-dark">
+				<tr>
+					<th scope="col">ID</th>
+					<th scope="col">Name</th>
+					<th scope="col">Email</th>
+					<th scope="col">Job</th>
+					<th scope="col">Team</th>
+					<th scope="col">Role</th>
+					<th scope="col">Days of vacation available</th>
+				</tr>
+			</thead>
+			<tbody>
+				{% for user in users %}
+					<tr>
+						<td>{{ user.id }}</td>
+						<td>{{ user.name }}</td>
+						<td>{{ user.email }}</td>
+						<td>{{ user.job }}</td>
+						<td>{{ user.id }}</td>
+						<td>{{ user.role.roleName }}</td>
+<td>{{ user.id }}</td><td>{{ user.id }}</td>
+<td>{{ user.id }}</td>
+
+						<td class="EditShowBtn">
+							<a style="float: inline-end; margin: 5px" href="{{ path('app_user_show', {'id': user.id}) }}" class="btn btn-sm btn-info">Show</a>
+							{% if is_granted('ROLE_ADMIN') %}
+								<a style="float: inline-end; margin: 5px" href="{{ path('app_user_edit', {'id': user.id}) }}" class="btn btn-sm btn-primary">Edit</a>
+							{% endif %}
+						</td>
+					</tr>
+				{% else %}
+					<tr>
+						<td colspan="5" class="text-center">No records found</td>
+					</tr>
+				{% endfor %}
+			</tbody>
+		</table>
+	</div>
+{% endblock %}

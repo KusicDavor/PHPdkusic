@@ -1,0 +1,18 @@
+{{ form_start(form) }}
+<div style="margin-left: 10px">
+	{{ form_widget(form) }}
+	{% if form_errors(form) %}
+		<div class="alert alert-danger">
+			<ul>
+				{% for error in form_errors(form) %}
+					<li>{{ error.message }}</li>
+				{% endfor %}
+			</ul>
+		</div>
+	{% endif %}
+</div>
+<button style="margin-left: 10px; font-size: 14px" class="btn">{{ button_label|default('Save') }}</button>
+{{ form_end(form) }}
+
+<a style="margin-top: 10px; margin-left: 10px; font-size: 12px" class="btn btn-primary" href="{{ path('app_user_index') }}">Go back to users list</a>
+<a style="margin-top: 10px; margin-left: 10px; font-size: 12px" class="btn btn-primary" href="{{ path('app_team_index') }}">Go back to teams list</a>

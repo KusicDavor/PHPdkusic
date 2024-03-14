@@ -1,0 +1,10 @@
+{% extends 'vacation_request/base.html.twig' %}
+
+{% block title %}New vacation request
+{% endblock %}
+
+{% block body %}
+	<h1>Create new vacation request</h1>
+	{{ include('vacation_request/_form.html.twig') }}
+	<a style="margin-top: 10px; margin-left: 10px; font-size: 12px" class="btn btn-primary" href=" {{ path('app_vacation_request_index') }} ">Back to list</a>
+{% endblock %}

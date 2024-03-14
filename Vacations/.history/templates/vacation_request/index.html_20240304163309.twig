@@ -1,0 +1,15 @@
+{% extends 'vacation_request/base.html.twig' %}
+
+{% block title %}Vacation requests
+{% endblock %}
+
+{% block body %}
+	<div class="container" style="margin-left: 10px">
+		<h1>Vacation requests</h1>
+		{{ include('vacation_request/requestsTable.html.twig') }}
+	</div>
+	<div class="container" style="margin-left: 10px">
+		<h1>Upcoming vacations</h1>
+		{{ include('vacation_request/requestsTable.html.twig') }}
+	</div>
+{% endblock %}

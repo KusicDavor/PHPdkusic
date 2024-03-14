@@ -1,0 +1,27 @@
+{% extends 'user/base.html.twig' %}
+{% block title %}Edit user
+{% endblock %}
+
+{% block body %}
+
+	{% if form_errors(form) %}
+		<script type="text/javascript">
+			var result = confirm({{ form_errors(form) }});
+if (result) {
+// User clicked OK
+// Add your code to handle the OK action here
+} else {
+// User clicked Cancel or closed the dialog
+// Add your code to handle the Cancel action here
+}
+		</script>
+	{% endif %}
+
+	<h1 style="margin-left: 10px">Edit user</h1>
+	<div style="width: 35%; margin-left: 30px">
+		{{ include('user/_form.html.twig', {'button_label': 'Update'}) }}
+	</div>
+	<div style="position: absolute; margin-left: 230px; top: 646px">
+		{{ include('user/_delete_form.html.twig') }}
+	</div>
+{% endblock %}

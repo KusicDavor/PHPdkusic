@@ -1,0 +1,31 @@
+<table class="table">
+
+	<thead>
+		<tr>
+			<th>Employee</th>
+			<th>Job</th>
+			<th>Number of currently available days</th>
+			<th>Start date</th>
+			<th>End date</th>
+			<th>Note</th>
+			<th>Vacation status</th>
+		</tr>
+	</thead>
+</thead>
+{% for vacation_request in vacation_requests %}
+	{% if app.user.team.id == vacation_request.user.team.id %}
+	
+		<tbody>
+			<tr>
+				<td>{{ vacation_request.user.name }}</td>
+				<td>{{ vacation_request.user.job }}</td>
+				<td>{{ vacation_request.user.team.teamname }}</td>
+				<td>{{ vacation_request.user.vacationDays }}</td>
+				<td>{{ vacation_request.startDate ? vacation_request.startDate|date('d.m.Y') : '' }}</td>
+				<td>{{ vacation_request.endDate ? vacation_request.endDate|date('d.m.Y') : '' }}</td>
+				<td>{{ vacation_request.note }}</td>
+				{{ include('vacation_request/tables/vacationStatus.html.twig') }}
+			</tr>
+		</tbody>
+	{% endif %}
+{% endfor %}
