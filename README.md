@@ -8,7 +8,7 @@ Vacations - web aplikacija izrađena u Symfonyu za upravljanje godišnjim odmori
 
 <br>
 
-Laravel web aplikacija - višejezična API aplikacija izrađena u Laravelu, omogućava korisniku pretragu  i filtriranje jela na temelju parametara poput oznaka, sastojaka, jezika, kategorije, soft deletanja
+Meals - višejezična API aplikacija izrađena u Laravelu, omogućava korisniku pretragu  i filtriranje jela na temelju parametara poput oznaka, sastojaka, jezika, kategorije, soft deletanja
 
 ![image](https://github.com/KusicDavor/Projekti/assets/81571301/47c334a8-2489-470e-9656-eb504ab14ea4)
 ![image](https://github.com/KusicDavor/Projekti/assets/81571301/8a372de2-52a9-48d2-864a-dc59901b9042)
@@ -27,7 +27,7 @@ PHP framework - izrada vlastitog frameworka u PHP-u za primanje i obradu request
 
 <br>
 
-ReBIL je aplikacija izrađena u C# (koristeći VS2022 i MS SQL Server) kao projekt za kolegij za organizaciju i upravljanje u poduzeću
+ReBIL - Windows desktop aplikacija izrađena u C# (koristeći VS2022 i MS SQL Server) kao projekt za kolegij za organizaciju i upravljanje u poduzeću
 
 ![image](https://github.com/KusicDavor/Projekti/assets/81571301/b5f8f00f-647c-4eb2-8857-4b4294289a97)
 ![image](https://github.com/KusicDavor/Projekti/assets/81571301/ac0d1893-bfe2-446d-8ee0-39f981f361f3)
