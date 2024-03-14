@@ -1,0 +1,6 @@
+<?php
+namespace App;
+require_once 'ResponseInterface.php';
+class Response implements ResponseInterface {
+    public function send() {}
+}

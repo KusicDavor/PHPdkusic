@@ -1,0 +1,11 @@
+RewriteEngine On
+RewriteBase /prvi_zadatak/
+
+# Route all requests to routes.php
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^(.*)$ index.php [L]
+
+<Directory /var/www/>
+    Options Indexes FollowSymLinks
+    AllowOverride All
+</Directory>

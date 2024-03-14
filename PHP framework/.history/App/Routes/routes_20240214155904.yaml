@@ -1,0 +1,4 @@
+index:
+    path:       /
+    controller: App\Http\Router::show
+    methods:    GET

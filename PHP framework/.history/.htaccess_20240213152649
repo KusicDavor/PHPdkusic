@@ -1,0 +1,8 @@
+RewriteEngine On
+RewriteBase /prvi_zadatak/
+
+# Route all requests to routes.php
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^(.*)$ index.php [L]
+
+DocumentRoot /var/www/html

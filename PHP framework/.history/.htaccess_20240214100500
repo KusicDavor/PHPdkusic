@@ -1,0 +1,6 @@
+RewriteEngine On
+RewriteBase /prvi_zadatak/App/
+
+# Route all requests to routes.php
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^(.*)$ Appindex.php [L]

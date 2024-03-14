@@ -1,0 +1,4 @@
+blogs:
+    method:    GET
+    path:       /
+    controller: App\Http\Router::blogs

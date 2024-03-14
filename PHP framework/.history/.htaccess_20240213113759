@@ -1,0 +1,6 @@
+RewriteEngine On
+RewriteBase /
+
+# Route all requests to routes.php
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^(.*)$ index.php [L]

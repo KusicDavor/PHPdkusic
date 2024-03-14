@@ -1,0 +1,14 @@
+index:
+    path:       /
+    controller: App\Http\Router::show
+    methods:    GET
+
+index:
+    path:       /
+    controller: App\Http\Router::load
+    methods:    POST
+
+login:
+    path:       /login
+    controller: App\Http\Router::login
+    methods:    GET

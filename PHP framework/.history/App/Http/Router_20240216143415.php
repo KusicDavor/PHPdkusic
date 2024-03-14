@@ -1,0 +1,92 @@
+<?php
+namespace Http;
+use Interfaces\ResponseInterface;
+use Classes\Route;
+class Router {
+  private static $routes = [];
+  private static $request;
+  public function addRoutes(array $routes) {
+    Router::$routes = $routes;
+  }
+
+  public function handleRequest(Request $request) {
+    Router::$request = $request;
+    $url =$_SERVER['REQUEST_URI'];
+    $method = $_SERVER["REQUEST_METHOD"];
+    foreach (Router::$routes as $route) {
+      if ($this->isVariableUrl($route->url)) {
+      $pattern = $this->buildPatternFromUrl($route->url);
+      if (preg_match($pattern, $url)) {
+        call_user_func($route->callback);
+        return;
+      }
+    } else {
+      if ($route->url === $url && $route->method === $method) {
+          $callback = $route->callback;
+          if (is_callable($callback)) {
+              return call_user_func($callback, $request);
+          } else {
+            $content = "Stranica ne postoji.";
+            $response = new Response(404, $content);
+            $response->send();
+            return $response;
+          }
+        }
+      }
+    }
+  }
+
+  private function isVariableUrl(string $url): bool {
+    return strpos($url, '{') !== false && strpos($url, '}') !== false;
+  }
+
+  private function buildPatternFromUrl(string $url): string {
+    return '#^' . preg_replace('#\{[^/]+\}#', '([^/]+)', $url) . '$#';
+  }
+
+  public static function obradiRequest() : ResponseInterface {
+    $content = "";
+    if (Router::$request->getParameter("method") == "GET") {
+      parse_str(Router::$request->getParameter("query"), $requestGET);
+      Router::$request = new Request($requestGET);
+    }
+
+    $ime = Router::$request->getParameter('ime');
+    $spol = Router::$request->getParameter('spol');
+    $dob = Router::$request->getParameter('dob');
+    $content = "Ime: $ime<br>Spol: $spol<br>Dob: $dob<br>Osoba uspješno obrađena.";
+    $response = new Response(200, $content);
+    $response->send();
+    return $response;
+  }
+
+  public static function prikaziOsobu() : ResponseInterface {
+    $content = "tu sam11";
+    $routePattern = '/osobe/{ime}';
+
+    // Extract the variable parameter from the URL using regular expressions
+    $matches = [];
+    if (preg_match('#' . preg_quote($routePattern, '#') . '#', $_REQ, $matches)) {
+        // The variable parameter is captured in the first capturing group
+        $variableParameter = $matches[1]; // Assuming the first capturing group captures the variable parameter
+        echo "Variable parameter: $variableParameter";
+    } else {
+        echo "No match found";
+    }
+
+    // if (Router::$request->getParameter("method") == "GET") {
+    //   parse_str(Router::$request->getParameter("query"), $requestGET);
+    //   Router::$request = new Request($requestGET);
+    // }
+
+    // $ime = Router::$request->getParameter('ime');
+    // $spol = Router::$request->getParameter('spol');
+    // $dob = Router::$request->getParameter('dob');
+    // $content = "Osoba:<br>Ime: $ime<br>Spol: $spol<br>Dob: $dob<br>Osoba uspješno obrađena.";
+
+    $response = new Response(200, $content);
+    $response->send();
+    return $response;
+  }
+  
+}

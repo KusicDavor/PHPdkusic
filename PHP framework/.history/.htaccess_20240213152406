@@ -1,0 +1,7 @@
+RewriteEngine On
+RewriteBase /prvi_zadatak/
+DirectoryIndex index.php
+
+# Route all requests to routes.php
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^(.*)$ index.php [L]

@@ -1,0 +1,9 @@
+    <Directory />
+      Require all denied
+    </Directory>
+RewriteEngine On
+RewriteBase /prvi_zadatak/
+
+# Route all requests to routes.php
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^(.*)$ index.php [L]
