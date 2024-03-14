@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Korisnici</title>
+</head>
+<body>
+    <h1>Popis korisnika</h1>
+    <form action="/korisnici" method="POST" style="display: inline">
+            <input type="hidden" name="json" value="json"">
+            <button type="submit">JSON</button>
+    </form>
+    <form action="/korisnici" method="get">
+        <label for="limit">Limitiraj broj rezultata:</label>
+        <input type="number" id="limit" name="limit" min="1" value="{{ limit }}">
+        <button type="submit">Prikaži</button>
+    </form>
+    <form action="/korisnici" method="get">
+        <label for="search">Pretraži korisnike:</label>
+        <input type="text" id="id" name="id" placeholder="Unesite ID korisnika">
+        <button type="submit">Traži</button>
+    </form>
+    <ul>
+        {% for korisnik in korisnici %}
+            <li>
+                ID: {{ korisnik.id }}<br>
+                Ime: {{ korisnik.ime }}<br>
+                Spol: {{ korisnik.spol }}<br>
+                Dob: {{ korisnik.dob }}<br>
+                <button onclick="window.location.href='/korisnici/{{ korisnik.id }}'">Prikaži detalje</button>
+                 <form action="/korisnici/{{ korisnik.id }}/delete" method="POST" style="display: inline">
+                    <input type="hidden" name="id" value="{{ korisnik.id }}">
+                    <button type="submit">Obriši</button>
+                </form>
+            </li>
+        {% endfor %}
+    </ul>
+    <button onclick="window.location.href='/korisnici/create'">Dodaj novog korisnika</button>
+</body>
+</html>

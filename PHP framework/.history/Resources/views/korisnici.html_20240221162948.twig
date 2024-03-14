@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Korisnici</title>
+    <style>
+        li {
+            display: block;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+
+        button {
+            margin-left: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Popis korisnika</h1>
+    <form action="" method="get">
+        <label for="limit">Limitiraj broj rezultata:</label>
+        <input type="number" id="limit" name="limit" min="1" value="{{ limit }}">
+        <button type="submit">Prikaži</button>
+    </form>
+    <ul>
+        {% for korisnik in korisnici %}
+            <li>
+                <div>
+                    <strong>ID:</strong> {{ korisnik.id }}<br>
+                    <strong>Ime:</strong> {{ korisnik.ime }}<br>
+                    <strong>Spol:</strong> {{ korisnik.spol }}<br>
+                    <strong>Dob:</strong> {{ korisnik.dob }}<br>
+                    <!-- Add any other user details -->
+                </div>
+                <form action="/korisnici/{{ korisnik.id }}" method="get">
+                    <button type="submit">Detalji</button>
+                </form>
+            </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<html>
+<div style="display: inline-block">
+<p>Dodavanje novog korisnika</p>
+<form id="forma" method="post" action="/korisnici">
+    <label for="ime">Ime:</label>
+    <input style="margin-left: 10px" type="text" id="ime" name="ime" required><br>
+
+    <label for="spol">Spol:</label>
+        <select style="margin-left: 6px; font-size: 16; margin-top: 8px" id="spol" name="spol" required>
+            <option value="">-</option>
+            <option value="M">M</option>
+            <option value="Ž">Ž</option>
+        </select><br>
+
+    <label for="dob">Dob:</label>
+    <input style="margin-left: 7px; margin-top: 8px" type="number" id="dob" name="dob" required><br>
+
+    <input style="font-weight: 600; margin-top: 7px; background-color: aqua" type="submit" value="Dodaj (POST)" method="POST" ">
+	</form>
+<script>
+    function validateForm() {
+    var name = document.getElementById("ime").value;
+    var spol = document.getElementById("spol").value;
+    var dob = document.getElementById("dob").value;
+
+    if (!name || !spol || !dob) {
+        alert("Morate popuniti sva polja.");
+        return false;
+    }
+
+    if (spol !== "M" && spol !== "Ž") {
+        alert("Morate odabrati vrijednost za spol (M ili Ž).");
+        return false;
+    }
+
+    return true;
+}
+</script>

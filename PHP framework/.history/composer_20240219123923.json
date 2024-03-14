@@ -1,0 +1,17 @@
+{
+    "type": "project",
+    "require": {
+        "php": ">=8.2",
+        "twig/twig": "^3.8",
+        "ext-pdo_mysql": "*"
+    },
+    "autoload": {
+        "psr-4": {
+            "Interfaces\\": "App/Interfaces/",
+            "Http\\": "App/Http",
+            "Controllers\\": "App/Controllers/",
+            "Classes\\": "App/Classes/"
+        },
+        "files": ["App/routes.php"]
+    }
+}

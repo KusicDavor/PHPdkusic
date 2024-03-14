@@ -1,0 +1,14 @@
+{
+    "type": "project",
+    "require": {
+        "php": ">=8.2"
+    },
+    "autoload": {
+        "psr-4": {
+            "Routes\\" : "App/Routes/",
+            "Http\\": "App/Http",
+            "Interfaces\\": "App/Interfaces/",
+            "Classes\\": "App/Classes/"
+        }
+    }
+}

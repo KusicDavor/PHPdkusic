@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Korisnik</title>
+</head>
+<body>
+    <h1>Korisnik</h1>
+    <button onclick="window.location.href='/korisnici'">Natrag na popis</button>
+    <br>
+<form action="/korisnici/{{ korisnik.id }}" method="POST" style="display: inline">
+    <input type="hidden" name="_method" value="PUT"> <!-- This field is used to simulate the PUT method -->
+    <input type="hidden" name="id" value="{{ korisnik.id }}">
+    <label for="ime">Ime:</label>
+    <input type="text" id="ime" name="ime" value="{{ korisnik.ime }}"><br>
+    <label for="spol">Spol:</label>
+    <input type="text" id="spol" name="spol" value="{{ korisnik.spol }}"><br>
+    <label for="dob">Dob:</label>
+    <input type="text" id="dob" name="dob" value="{{ korisnik.dob }}"><br>
+    <button type="submit">Uredi korisnika</button>
+</form>
+
+</body>
+</html>

@@ -1,0 +1,13 @@
+<?php
+namespace Routes;
+use Classes\Route;
+use Http\Router;
+
+$router = new Router();
+$router->addRoutes([
+    new Route('/', 'GET', [Router::class, 'index']),
+    new Route('/login', 'GET', [Router::class, 'nePostoji']),
+    new Route('/osobe/{ime}', 'GET', [Router::class, 'prikaziOsobu']),
+    $router->addRoute(new Route('/index', 'GET', [IndexController::class, 'indexAction']));
+$router->addRoute(new Route('/index/json', 'GET', [IndexController::class, 'indexJsonAction']));
+]);

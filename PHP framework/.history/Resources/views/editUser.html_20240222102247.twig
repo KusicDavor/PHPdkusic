@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Korisnik</title>
+</head>
+<body>
+    <h1>Korisnik</h1>
+    <ul>
+        <li>ID: {{ korisnik.id }}</li>
+        <li>Ime: <input type="text" name="ime" value="{{ korisnik.ime }}"></li>
+        <li>Spol: <input type="text" name="spol" value="{{ korisnik.spol }}"></li>
+        <li>Dob: <input type="text" name="dob" value="{{ korisnik.dob }}"></li>
+    </ul>
+    <form action="/korisnici/{{ korisnik.id }}" method="PUT" style="display: inline">
+        <input type="hidden" name="ime" value="{{ korisnik.ime }}">
+        <input type="hidden" name="spol" value="{{ korisnik.spol }}">
+        <input type="hidden" name="dob" value="{{ korisnik.dob }}">
+        <button type="submit">Uredi korisnika</button>
+    </form>
+</body>
+</html>

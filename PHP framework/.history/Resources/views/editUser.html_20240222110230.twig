@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Korisnik</title>
+</head>
+<body>
+    <h1>Edit Korisnik</h1>
+    <form id="editForm">
+        <label for="ime">Ime:</label>
+        <input type="text" id="ime" name="ime" value="{{ korisnik.ime }}"><br>
+        <label for="spol">Spol:</label>
+        <input type="text" id="spol" name="spol" value="{{ korisnik.spol }}"><br>
+        <label for="dob">Dob:</label>
+        <input type="number" id="dob" name="dob" value="{{ korisnik.dob }}"><br>
+        <button type="button" onclick="updateUser()">Update</button>
+    </form>
+
+    <script>
+        function updateUser() {
+            var userID = "{{ korisnik.id }}";
+            var form = document.getElementById("editForm");
+            var formData = new FormData(form);
+
+            var xhr = new XMLHttpRequest();
+            xhr.open("PUT", "/korisnici/update/" + userID);
+            xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+
+            xhr.onload = function () {
+                if (xhr.status === 200) {
+                    window.location.href = "/korisnici/update/" + userID;
+                } else {
+                    alert("Failed to update korisnik");
+                }
+            };
+            xhr.send(new URLSearchParams(formData));
+        }
+    </script>
+</body>
+</html>

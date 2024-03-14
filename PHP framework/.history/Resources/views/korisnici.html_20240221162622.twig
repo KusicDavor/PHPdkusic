@@ -1,0 +1,29 @@
+{# poruka.html.twig #}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Korisnici</title>
+</head>
+<body>
+    <h1>Popis korisnika</h1>
+    <form action="" method="get">
+        <label for="limit">Limitiraj broj rezultata:</label>
+        <input type="number" id="limit" name="limit" min="1" value="{{ limit }}">
+        <button type="submit">Prikaži</button>
+    </form>
+    <ul>
+        {% for korisnik in korisnici %}
+            <li>
+            ID: {{korisnik.id }}<br>
+                Ime: {{ korisnik.ime }}<br>
+                Spol: {{ korisnik.spol }}<br>
+                Dob: {{ korisnik.dob }}<br>
+                <!-- Dodajte ostale informacije koje želite prikazati -->
+            </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

@@ -1,0 +1,6 @@
+<?php
+require 'klase/RequestInterface.php';
+require 'ResponseInterface.php';
+require 'Router.php';
+require 'Request.php';
+require 'routes.php';
