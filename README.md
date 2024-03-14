@@ -1,5 +1,5 @@
 # Projekti
-Detaljnije o projektima piše u njihovim Readme
+## Detaljnije o projektima piše u njihovim Readme
 
 Vacations - web aplikacija izrađena u Symfonyu za upravljanje godišnjim odmorima u poduzeću i administraciju
 
