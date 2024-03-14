@@ -1,4 +1,5 @@
 # Projekti
+Detaljnije o projektima Laravel, ReBIL, Vacations piše u njihovim Readme
 
 Bubi/Web je HTML/CSS projekt - nakon preuzimanja, dovoljno je otvoriti index.html
 
