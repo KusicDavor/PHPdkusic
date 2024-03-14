@@ -60,7 +60,7 @@ AerodromiLetovi - Java web aplikacija (Maven), sadrži 5 manjih aplikacija:
 
 UsersAPI - Symfony API aplikacija
 - implementira autorizaciju kroz JWT (OAuth 2.0)
-- sadrži rute za registraciju, logiranj i logout korisnika
+- sadrži rute za registraciju, logiranje i logout korisnika
 - seedanje korisnika u bazu, korištenje query builder i helper funkcija
 - export podataka iz baze u CSV i PDF formatu te slanje na korisnikov mail
 - ograničenja broja exportanja po korisniku i upotreba cache memorije
